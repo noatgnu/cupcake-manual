@@ -34,6 +34,12 @@ screen) and `search-index.js` (offline search), and converts the screenshots it 
 The `.tar.gz` goes into an app at build time; cupcake-master takes it with
 `docker build --build-arg MANUAL_BUNDLE_URL=<url of the .tar.gz>` and serves it at `/help/`.
 
+## Screenshots and publishing
+
+The screenshots the manual uses are kept in `screenshots/<app>/`, copied from the client tests' screenshot folder
+after a run. On every push to `main`, CI tests the build, builds each manual, publishes the bundles as assets of the
+`manual` release, which the apps' image builds download, and deploys the sites to GitHub Pages.
+
 ## Tests
 
 ```

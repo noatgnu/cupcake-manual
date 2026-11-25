@@ -1,0 +1,74 @@
+name: Manual
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: manual
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: |
+          pip install poetry
+          poetry install --no-interaction
+
+      - name: Test
+        run: poetry run pytest
+
+      - name: Build the cupcake-master manual
+        run: |
+          poetry run python -m manual --app cupcake-master --title "cupcake-master manual" \
+            --screenshots screenshots/cupcake-master --out site/cupcake-master \
+            --archive cupcake-master-manual.tar.gz
+
+      - name: Add the front page listing the manuals
+        run: |
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cupcake manuals</title></head>
+          <body style="font: 15px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem">
+          <h1>Cupcake manuals</h1>
+          <ul><li><a href="cupcake-master/index.html">cupcake-master</a></li></ul>
+          </body>
+          </html>
+          HTML
+
+      - name: Publish the bundle for the apps' image builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete manual --cleanup-tag --yes 2>/dev/null || true
+          gh release create manual cupcake-master-manual.tar.gz --target "${GITHUB_SHA}" --title "Manual bundles" \
+            --notes "Offline manual bundles built from ${GITHUB_SHA}; the apps bake these into their images." --latest=false
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

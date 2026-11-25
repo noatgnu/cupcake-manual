@@ -1,0 +1,331 @@
+{
+  "url": "https://cupcake-k3s.tail1e420d.ts.net",
+  "label": "pi-k3s-20261124",
+  "taken": "2026-11-24T17:41:04+0000",
+  "screenshots": [
+    {
+      "name": "1-progress",
+      "lineup": "k3s-setup",
+      "file": "k3s-setup/1-progress.png",
+      "caption": "Each k3s node shows its setup steps at http://<host name>.local:8080 while it sets up."
+    },
+    {
+      "name": "01-instances",
+      "lineup": "screens",
+      "file": "screens/01-instances.png",
+      "caption": "The Instances page lists every Cupcake instance with its state, address, images and owner."
+    },
+    {
+      "name": "02-new-instance",
+      "lineup": "screens",
+      "file": "screens/02-new-instance.png",
+      "caption": "New instance: choose the slug, which names the instance's address, and optionally the image tag."
+    },
+    {
+      "name": "03-domains",
+      "lineup": "screens",
+      "file": "screens/03-domains.png",
+      "caption": "Domains lists the host names cupcake-master answers on and how each is reached."
+    },
+    {
+      "name": "04-remote-access",
+      "lineup": "screens",
+      "file": "screens/04-remote-access.png",
+      "caption": "Remote access sets up a Cloudflare tunnel or the Tailscale operator for reaching the cluster from outside."
+    },
+    {
+      "name": "05-trust",
+      "lineup": "screens",
+      "file": "screens/05-trust.png",
+      "caption": "Trust explains how to make devices trust this cluster's own certificate authority."
+    },
+    {
+      "name": "06-models",
+      "lineup": "screens",
+      "file": "screens/06-models.png",
+      "caption": "Models lists the transcription models kept for every instance, and which is the default."
+    },
+    {
+      "name": "07-users",
+      "lineup": "screens",
+      "file": "screens/07-users.png",
+      "caption": "Users lists the accounts, their state and instance limit, and the sign-up settings."
+    },
+    {
+      "name": "08-logs",
+      "lineup": "screens",
+      "file": "screens/08-logs.png",
+      "caption": "Logs shows the recent output of cupcake-master's own components."
+    },
+    {
+      "name": "09-notifications",
+      "lineup": "screens",
+      "file": "screens/09-notifications.png",
+      "caption": "Notifications lists everything cupcake-master has told you, newest first."
+    },
+    {
+      "name": "10-notification-menu",
+      "lineup": "screens",
+      "file": "screens/10-notification-menu.png",
+      "caption": "The bell opens the latest notifications; unread ones are marked."
+    },
+    {
+      "name": "11-account-menu",
+      "lineup": "screens",
+      "file": "screens/11-account-menu.png",
+      "caption": "The account menu chooses the light, dark or automatic appearance and signs out."
+    },
+    {
+      "name": "12-tooltip",
+      "lineup": "screens",
+      "file": "screens/12-tooltip.png",
+      "caption": "Icon buttons name their action when the pointer rests on them."
+    },
+    {
+      "name": "01-instances",
+      "lineup": "screens-dark",
+      "file": "screens-dark/01-instances.png",
+      "caption": "The Instances page lists every Cupcake instance with its state, address, images and owner. In the dark theme, which follows the computer's setting by default."
+    },
+    {
+      "name": "03-domains",
+      "lineup": "screens-dark",
+      "file": "screens-dark/03-domains.png",
+      "caption": "Domains lists the host names cupcake-master answers on and how each is reached. In the dark theme, which follows the computer's setting by default."
+    },
+    {
+      "name": "04-remote-access",
+      "lineup": "screens-dark",
+      "file": "screens-dark/04-remote-access.png",
+      "caption": "Remote access sets up a Cloudflare tunnel or the Tailscale operator for reaching the cluster from outside. In the dark theme, which follows the computer's setting by default."
+    },
+    {
+      "name": "07-users",
+      "lineup": "screens-dark",
+      "file": "screens-dark/07-users.png",
+      "caption": "Users lists the accounts, their state and instance limit, and the sign-up settings. In the dark theme, which follows the computer's setting by default."
+    },
+    {
+      "name": "1-api-access",
+      "lineup": "steps-api-tokens",
+      "file": "steps-api-tokens/1-api-access.png",
+      "caption": "API access on an instance's page lists the tokens that let scripts manage it."
+    },
+    {
+      "name": "2-filled",
+      "lineup": "steps-api-tokens",
+      "file": "steps-api-tokens/2-filled.png",
+      "caption": "Name the token, choose what it may do and when it expires, then choose Create token."
+    },
+    {
+      "name": "3-shown-once",
+      "lineup": "steps-api-tokens",
+      "file": "steps-api-tokens/3-shown-once.png",
+      "caption": "Copy the token straight away; it is shown only once."
+    },
+    {
+      "name": "4-replaced",
+      "lineup": "steps-api-tokens",
+      "file": "steps-api-tokens/4-replaced.png",
+      "caption": "Replace the token gives a new one, shown once; the old one stops working at once."
+    },
+    {
+      "name": "5-revoked",
+      "lineup": "steps-api-tokens",
+      "file": "steps-api-tokens/5-revoked.png",
+      "caption": "Revoke removes the token."
+    },
+    {
+      "name": "1-instance",
+      "lineup": "steps-backup",
+      "file": "steps-backup/1-instance.png",
+      "caption": "Back up now is among the actions at the top of an instance's page."
+    },
+    {
+      "name": "2-queued",
+      "lineup": "steps-backup",
+      "file": "steps-backup/2-queued.png",
+      "caption": "The backup is queued and shown in the task history."
+    },
+    {
+      "name": "3-listed",
+      "lineup": "steps-backup",
+      "file": "steps-backup/3-listed.png",
+      "caption": "When it finishes, the backup is listed under Backups, where it can be restored or deleted."
+    },
+    {
+      "name": "1-domains",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/1-domains.png",
+      "caption": "Domains, in the top menu, lists the host names cupcake-master itself answers on."
+    },
+    {
+      "name": "2-filled",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/2-filled.png",
+      "caption": "Enter the host name, choose HTTPS, self-signed certificate when you have no certificate for it yet, then choose Add domain."
+    },
+    {
+      "name": "3-self-signed",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/3-self-signed.png",
+      "caption": "The domain is served over HTTPS with a self-signed certificate; browsers warn about it until a signed certificate is uploaded."
+    },
+    {
+      "name": "4-upload",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/4-upload.png",
+      "caption": "Use a signed certificate asks for the certificate, with any intermediates, and its key."
+    },
+    {
+      "name": "5-own-certificate",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/5-own-certificate.png",
+      "caption": "The domain now uses your certificate; its expiry is shown, and staff are warned two weeks before it."
+    },
+    {
+      "name": "6-removed",
+      "lineup": "steps-cupcake-master-domain",
+      "file": "steps-cupcake-master-domain/6-removed.png",
+      "caption": "Remove takes the domain and its certificate away."
+    },
+    {
+      "name": "1-warning",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/1-warning.png",
+      "caption": "Delete instance, at the bottom of an instance's page, says what is removed and when; only staff see it."
+    },
+    {
+      "name": "2-confirm",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/2-confirm.png",
+      "caption": "Type the instance's slug to confirm; Delete instance is only available once it matches."
+    },
+    {
+      "name": "3-scheduled",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/3-scheduled.png",
+      "caption": "The instance is stopped at once and kept until the date shown; its owner is told."
+    },
+    {
+      "name": "4-listed",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/4-listed.png",
+      "caption": "On the Instances page it is marked with the day it will be deleted."
+    },
+    {
+      "name": "5-recovered",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/5-recovered.png",
+      "caption": "Recover, before that date, cancels the deletion and starts the instance again."
+    },
+    {
+      "name": "6-delete-now",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/6-delete-now.png",
+      "caption": "To delete it without waiting, type its slug again under the date and choose Delete now."
+    },
+    {
+      "name": "7-deleted",
+      "lineup": "steps-delete-instance",
+      "file": "steps-delete-instance/7-deleted.png",
+      "caption": "Once deleted, its programs, database and files are gone; the page keeps its history."
+    },
+    {
+      "name": "1-domains",
+      "lineup": "steps-instance-domain",
+      "file": "steps-instance-domain/1-domains.png",
+      "caption": "Domains on an instance's page lists every host name the instance answers on."
+    },
+    {
+      "name": "2-filled",
+      "lineup": "steps-instance-domain",
+      "file": "steps-instance-domain/2-filled.png",
+      "caption": "Enter another host name, such as ct-8765a7-docs.local, and how it is reached, then choose Add domain. Under the cluster's domain an instance may use its slug followed by -<name>."
+    },
+    {
+      "name": "3-added",
+      "lineup": "steps-instance-domain",
+      "file": "steps-instance-domain/3-added.png",
+      "caption": "The domain is added and the instance is updated to answer on it."
+    },
+    {
+      "name": "4-removed",
+      "lineup": "steps-instance-domain",
+      "file": "steps-instance-domain/4-removed.png",
+      "caption": "Remove takes the domain away again; the main domain cannot be removed."
+    },
+    {
+      "name": "1-form",
+      "lineup": "steps-new-instance",
+      "file": "steps-new-instance/1-form.png",
+      "caption": "Choose New instance on the Instances page."
+    },
+    {
+      "name": "2-filled",
+      "lineup": "steps-new-instance",
+      "file": "steps-new-instance/2-filled.png",
+      "caption": "Enter a slug of 4 to 32 lower-case letters, digits and hyphens; it names the instance's address. Leave the image tag empty for the current release."
+    },
+    {
+      "name": "3-queued",
+      "lineup": "steps-new-instance",
+      "file": "steps-new-instance/3-queued.png",
+      "caption": "The new instance's page opens; its provisioning is queued."
+    },
+    {
+      "name": "4-provisioning",
+      "lineup": "steps-new-instance",
+      "file": "steps-new-instance/4-provisioning.png",
+      "caption": "While it is provisioned, the task history shows the running task."
+    },
+    {
+      "name": "5-active",
+      "lineup": "steps-new-instance",
+      "file": "steps-new-instance/5-active.png",
+      "caption": "Once active, the instance answers at its address, shown under Domains."
+    },
+    {
+      "name": "0-wrong-password",
+      "lineup": "steps-sign-in",
+      "file": "steps-sign-in/0-wrong-password.png",
+      "caption": "A wrong email address or password is refused with a message."
+    },
+    {
+      "name": "1-sign-in-form",
+      "lineup": "steps-sign-in",
+      "file": "steps-sign-in/1-sign-in-form.png",
+      "caption": "The sign-in page of cupcake-master."
+    },
+    {
+      "name": "2-sign-in-filled",
+      "lineup": "steps-sign-in",
+      "file": "steps-sign-in/2-sign-in-filled.png",
+      "caption": "Enter the email address and password of your account, then choose Sign in."
+    },
+    {
+      "name": "3-signed-in",
+      "lineup": "steps-sign-in",
+      "file": "steps-sign-in/3-signed-in.png",
+      "caption": "After signing in, cupcake-master opens on the Instances page."
+    },
+    {
+      "name": "1-suspending",
+      "lineup": "steps-suspend-resume",
+      "file": "steps-suspend-resume/1-suspending.png",
+      "caption": "Suspend stops the instance's programs but keeps its data; confirm when asked."
+    },
+    {
+      "name": "2-suspended",
+      "lineup": "steps-suspend-resume",
+      "file": "steps-suspend-resume/2-suspended.png",
+      "caption": "A suspended instance shows Resume instead of Suspend."
+    },
+    {
+      "name": "3-resumed",
+      "lineup": "steps-suspend-resume",
+      "file": "steps-suspend-resume/3-resumed.png",
+      "caption": "Resume starts it again; it is active once its programs answer."
+    }
+  ]
+}
