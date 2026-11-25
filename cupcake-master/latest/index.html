@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>cupcake-master manual</h1>
+<div class="cards">
+  <a class="card" href="./getting-started.html"><strong>Getting started</strong><span>Signing in, finding your way around, notifications and appearance.</span></a>
+  <a class="card" href="./instances.html"><strong>Instances</strong><span>Creating an instance, its page, its admin account and following its tasks.</span></a>
+  <a class="card" href="./api-tokens.html"><strong>API tokens</strong><span>Letting scripts manage an instance through cupcake-master's API.</span></a>
+  <a class="card" href="./domains.html"><strong>Domains and certificates</strong><span>The host names instances and cupcake-master answer on, and their HTTPS certificates.</span></a>
+  <a class="card" href="./backups.html"><strong>Backups and restore</strong><span>Nightly backups, copying them off the node, how long they are kept, and restoring an instance.</span></a>
+  <a class="card" href="./suspend-and-delete.html"><strong>Suspending and deleting instances</strong><span>Stopping an instance for a while, deleting it, and recovering it before it is gone.</span></a>
+  <a class="card" href="./remote-access.html"><strong>Remote access</strong><span>Reaching instances and cupcake-master from outside the local network with Cloudflare or Tailscale.</span></a>
+  <a class="card" href="./trust.html"><strong>Trusting the cluster's certificates</strong><span>Making browsers trust the addresses a cluster signs itself, without internet.</span></a>
+  <a class="card" href="./users.html"><strong>Users and sign-up</strong><span>Approving accounts, instance limits, suspending accounts and the sign-up settings.</span></a>
+  <a class="card" href="./models.html"><strong>Transcription models</strong><span>The speech-to-text models kept for every instance.</span></a>
+  <a class="card" href="./logs.html"><strong>Logs</strong><span>Reading the output of cupcake-master's and each instance's programs.</span></a>
+  <a class="card" href="./pi-cluster.html"><strong>Setting up a Pi cluster</strong><span>Preparing Raspberry Pis as a k3s cluster with files on the boot partition, and checking them.</span></a>
+</div>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

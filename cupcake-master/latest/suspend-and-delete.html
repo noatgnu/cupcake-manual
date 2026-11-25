@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suspending and deleting instances · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" aria-current="page">Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Suspending and deleting instances</h1>
+<article class="manual"><h2 id="suspend-and-resume">Suspend and resume</h2>
+<p><strong>Suspend</strong> stops an instance's programs but keeps its data. Confirm when asked.</p>
+<figure class="shot"><img src="img/steps-suspend-resume--1-suspending.webp" alt="Suspend stops the instance&#x27;s programs but keeps its data; confirm when asked." loading="lazy"><figcaption>Suspend stops the instance&#x27;s programs but keeps its data; confirm when asked.</figcaption></figure>
+
+<p>A suspended instance shows <strong>Resume</strong> instead.</p>
+<figure class="shot"><img src="img/steps-suspend-resume--2-suspended.webp" alt="A suspended instance shows Resume instead of Suspend." loading="lazy"><figcaption>A suspended instance shows Resume instead of Suspend.</figcaption></figure>
+
+<p><strong>Resume</strong> starts it again; it is active once its programs answer.</p>
+<figure class="shot"><img src="img/steps-suspend-resume--3-resumed.webp" alt="Resume starts it again; it is active once its programs answer." loading="lazy"><figcaption>Resume starts it again; it is active once its programs answer.</figcaption></figure>
+
+<h2 id="deleting-an-instance">Deleting an instance</h2>
+<p>Only staff can delete an instance. <strong>Delete instance</strong> is at the bottom of its page and says what is removed and when.</p>
+<figure class="shot"><img src="img/steps-delete-instance--1-warning.webp" alt="Delete instance, at the bottom of an instance&#x27;s page, says what is removed and when; only staff see it." loading="lazy"><figcaption>Delete instance, at the bottom of an instance&#x27;s page, says what is removed and when; only staff see it.</figcaption></figure>
+
+<p>Type the instance's slug to confirm; the button only works once it matches.</p>
+<figure class="shot"><img src="img/steps-delete-instance--2-confirm.webp" alt="Type the instance&#x27;s slug to confirm; Delete instance is only available once it matches." loading="lazy"><figcaption>Type the instance&#x27;s slug to confirm; Delete instance is only available once it matches.</figcaption></figure>
+
+<p>The instance is stopped at once and kept for 7 days. Its owner is told the date.</p>
+<figure class="shot"><img src="img/steps-delete-instance--3-scheduled.webp" alt="The instance is stopped at once and kept until the date shown; its owner is told." loading="lazy"><figcaption>The instance is stopped at once and kept until the date shown; its owner is told.</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-delete-instance--4-listed.webp" alt="On the Instances page it is marked with the day it will be deleted." loading="lazy"><figcaption>On the Instances page it is marked with the day it will be deleted.</figcaption></figure>
+
+<p>Backups already made are kept. The slug and the instance's domains stay reserved.</p>
+<h2 id="recovering-a-deleted-instance">Recovering a deleted instance</h2>
+<p>Until the date shown, staff can choose <strong>Recover</strong>, which cancels the deletion and starts the instance again. Its owner
+cannot resume it while it is waiting to be deleted.</p>
+<figure class="shot"><img src="img/steps-delete-instance--5-recovered.webp" alt="Recover, before that date, cancels the deletion and starts the instance again." loading="lazy"><figcaption>Recover, before that date, cancels the deletion and starts the instance again.</figcaption></figure>
+
+<h2 id="deleting-at-once">Deleting at once</h2>
+<p>To delete without waiting, type the slug again under the date and choose <strong>Delete now</strong>.</p>
+<figure class="shot"><img src="img/steps-delete-instance--6-delete-now.webp" alt="To delete it without waiting, type its slug again under the date and choose Delete now." loading="lazy"><figcaption>To delete it without waiting, type its slug again under the date and choose Delete now.</figcaption></figure>
+
+<p>Once deleted, its programs, database and files are gone; the page keeps its history.</p>
+<figure class="shot"><img src="img/steps-delete-instance--7-deleted.webp" alt="Once deleted, its programs, database and files are gone; the page keeps its history." loading="lazy"><figcaption>Once deleted, its programs, database and files are gone; the page keeps its history.</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instances · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" aria-current="page">Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Instances</h1>
+<article class="manual"><figure class="shot"><img src="img/screens--01-instances.webp" alt="The Instances page lists every Cupcake instance with its state, address, images and owner." loading="lazy"><figcaption>The Instances page lists every Cupcake instance with its state, address, images and owner.</figcaption></figure>
+
+<h2 id="creating-an-instance">Creating an instance</h2>
+<ol>
+<li>Choose <strong>New instance</strong> on the Instances page.</li>
+</ol>
+<figure class="shot"><img src="img/steps-new-instance--1-form.webp" alt="Choose New instance on the Instances page." loading="lazy"><figcaption>Choose New instance on the Instances page.</figcaption></figure>
+
+<ol>
+<li>Enter a slug: 4 to 32 lower-case letters, digits and hyphens. It names the instance's address, for example
+   <code>lab1</code> becomes <code>https://lab1.local</code> on a Pi cluster. Leave the image tag empty for the current release.</li>
+</ol>
+<figure class="shot"><img src="img/steps-new-instance--2-filled.webp" alt="Enter a slug of 4 to 32 lower-case letters, digits and hyphens; it names the instance&#x27;s address. Leave the image tag empty for the current release." loading="lazy"><figcaption>Enter a slug of 4 to 32 lower-case letters, digits and hyphens; it names the instance&#x27;s address. Leave the image tag empty for the current release.</figcaption></figure>
+
+<ol>
+<li>Choose <strong>Create</strong>. The instance's page opens and its provisioning starts.</li>
+</ol>
+<figure class="shot"><img src="img/steps-new-instance--3-queued.webp" alt="The new instance&#x27;s page opens; its provisioning is queued." loading="lazy"><figcaption>The new instance&#x27;s page opens; its provisioning is queued.</figcaption></figure>
+
+<p>While it runs, the task history shows the step it is on and how long it has been running, and the log below
+   follows it live.</p>
+<figure class="shot"><img src="img/steps-new-instance--4-provisioning.webp" alt="While it is provisioned, the task history shows the running task." loading="lazy"><figcaption>While it is provisioned, the task history shows the running task.</figcaption></figure>
+
+<ol>
+<li>Once it is <strong>active</strong>, the instance answers at the address under Domains.</li>
+</ol>
+<figure class="shot"><img src="img/steps-new-instance--5-active.webp" alt="Once active, the instance answers at its address, shown under Domains." loading="lazy"><figcaption>Once active, the instance answers at its address, shown under Domains.</figcaption></figure>
+
+<p>On a Raspberry Pi the instance is usually active after about 5 minutes. Its ontologies and column templates are then
+imported from the cluster's reference snapshot as a task of its own, while the instance can already be used.</p>
+<h2 id="the-admin-account">The admin account</h2>
+<p>Provisioning creates a superuser in the new instance for its owner. The username is the part of the owner's email
+address before the @. The owner sees the password <strong>once</strong>, at the top of the Admin account section of the instance's
+page, the first time they open it after provisioning; copy it then.</p>
+<p>If the password is lost, <strong>Reset admin password</strong> on the same page sets a new one, again shown once to the owner. Staff
+can reset it too, but only the owner sees the new password.</p>
+<h2 id="the-instances-page">The instance's page</h2>
+<p>The page shows the instance's state and actions, its admin account, domains, API access, backups, configuration and
+task history. Staff also see maintenance tasks such as loading reference data.</p>
+<p>Each instance's own logs are under the <strong>Logs</strong> button at the top of its page.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

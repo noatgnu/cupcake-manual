@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domains and certificates · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" aria-current="page">Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Domains and certificates</h1>
+<article class="manual"><p>Every instance gets an address under the cluster's domain, such as <code>lab1.local</code>. More host names can be added to an
+instance, or to cupcake-master itself, each reached one of these ways:</p>
+<table>
+<thead>
+<tr>
+<th>Reached through</th>
+<th>Certificate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local network</td>
+<td>Signed by the cluster's own certificate authority; devices trust it once they <a href="./trust.html">trust the cluster</a></td>
+</tr>
+<tr>
+<td>Public</td>
+<td>A free Let's Encrypt certificate; the name must point at the cluster from the internet</td>
+</tr>
+<tr>
+<td>Your own certificate</td>
+<td>A certificate and key you upload, for example from your institution</td>
+</tr>
+<tr>
+<td>HTTPS, self-signed certificate</td>
+<td>Encrypted, but browsers warn until a signed certificate is uploaded</td>
+</tr>
+<tr>
+<td>Cloudflare Tunnel</td>
+<td>Cloudflare's certificate; see <a href="./remote-access.html">remote access</a></td>
+</tr>
+<tr>
+<td>Tailscale</td>
+<td>Tailscale's certificate; the domain becomes a device on your tailnet</td>
+</tr>
+</tbody>
+</table>
+<p>A host name can only be used once. Under the cluster's domain an instance may use its slug, or its slug followed by
+<code>-&lt;name&gt;</code>, so instances cannot take each other's names. Plain HTTP requests are redirected to HTTPS.</p>
+<h2 id="adding-a-domain-to-an-instance">Adding a domain to an instance</h2>
+<ol>
+<li>On the instance's page, Domains lists its host names.</li>
+</ol>
+<figure class="shot"><img src="img/steps-instance-domain--1-domains.webp" alt="Domains on an instance&#x27;s page lists every host name the instance answers on." loading="lazy"><figcaption>Domains on an instance&#x27;s page lists every host name the instance answers on.</figcaption></figure>
+
+<ol>
+<li>Enter the host name and how it is reached, then choose <strong>Add domain</strong>.</li>
+</ol>
+<figure class="shot"><img src="img/steps-instance-domain--2-filled.webp" alt="Enter another host name, such as ct-8765a7-docs.local, and how it is reached, then choose Add domain. Under the cluster&#x27;s domain an instance may use its slug followed by -&lt;name&gt;." loading="lazy"><figcaption>Enter another host name, such as ct-8765a7-docs.local, and how it is reached, then choose Add domain. Under the cluster&#x27;s domain an instance may use its slug followed by -&lt;name&gt;.</figcaption></figure>
+
+<ol>
+<li>The instance is updated to answer on it; its programs restart briefly.</li>
+</ol>
+<figure class="shot"><img src="img/steps-instance-domain--3-added.webp" alt="The domain is added and the instance is updated to answer on it." loading="lazy"><figcaption>The domain is added and the instance is updated to answer on it.</figcaption></figure>
+
+<p><strong>Remove</strong> takes a domain away again. The main domain cannot be removed; make another one the main domain first.</p>
+<figure class="shot"><img src="img/steps-instance-domain--4-removed.webp" alt="Remove takes the domain away again; the main domain cannot be removed." loading="lazy"><figcaption>Remove takes the domain away again; the main domain cannot be removed.</figcaption></figure>
+
+<h2 id="cupcake-masters-own-domains">cupcake-master's own domains</h2>
+<p>Domains, in the top menu, lists the host names cupcake-master itself answers on.</p>
+<figure class="shot"><img src="img/steps-cupcake-master-domain--1-domains.webp" alt="Domains, in the top menu, lists the host names cupcake-master itself answers on." loading="lazy"><figcaption>Domains, in the top menu, lists the host names cupcake-master itself answers on.</figcaption></figure>
+
+<p>Add one the same way. Without a certificate for it yet, choose <strong>HTTPS, self-signed certificate</strong>:</p>
+<figure class="shot"><img src="img/steps-cupcake-master-domain--2-filled.webp" alt="Enter the host name, choose HTTPS, self-signed certificate when you have no certificate for it yet, then choose Add domain." loading="lazy"><figcaption>Enter the host name, choose HTTPS, self-signed certificate when you have no certificate for it yet, then choose Add domain.</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-cupcake-master-domain--3-self-signed.webp" alt="The domain is served over HTTPS with a self-signed certificate; browsers warn about it until a signed certificate is uploaded." loading="lazy"><figcaption>The domain is served over HTTPS with a self-signed certificate; browsers warn about it until a signed certificate is uploaded.</figcaption></figure>
+
+<h2 id="using-your-own-certificate">Using your own certificate</h2>
+<p><strong>Use a signed certificate</strong> (or <strong>Replace the certificate</strong>) asks for the certificate, with any intermediates, and its
+key, each as a PEM file.</p>
+<figure class="shot"><img src="img/steps-cupcake-master-domain--4-upload.webp" alt="Use a signed certificate asks for the certificate, with any intermediates, and its key." loading="lazy"><figcaption>Use a signed certificate asks for the certificate, with any intermediates, and its key.</figcaption></figure>
+
+<p>The domain then uses your certificate. Its expiry is shown, and staff are warned two weeks before it.</p>
+<figure class="shot"><img src="img/steps-cupcake-master-domain--5-own-certificate.webp" alt="The domain now uses your certificate; its expiry is shown, and staff are warned two weeks before it." loading="lazy"><figcaption>The domain now uses your certificate; its expiry is shown, and staff are warned two weeks before it.</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-cupcake-master-domain--6-removed.webp" alt="Remove takes the domain and its certificate away." loading="lazy"><figcaption>Remove takes the domain and its certificate away.</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

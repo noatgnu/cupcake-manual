@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trusting the cluster's certificates · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" aria-current="page">Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Trusting the cluster's certificates</h1>
+<article class="manual"><p>A cluster without internet signs its local addresses, such as <code>https://lab1.local</code>, with its own certificate
+authority. Browsers warn about those addresses until the device trusts that authority once. The Trust page shows how,
+for each kind of device, and offers <code>cupcake-ca.crt</code> to download. Its SHA-256 fingerprint is shown so you can check
+the file.</p>
+<figure class="shot"><img src="img/screens--05-trust.webp" alt="Trust explains how to make devices trust this cluster&#x27;s own certificate authority." loading="lazy"><figcaption>Trust explains how to make devices trust this cluster&#x27;s own certificate authority.</figcaption></figure>
+
+<p>On a Pi cluster the same file is on the control plane's boot partition as <code>cupcake-k3s-ca.crt</code>.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

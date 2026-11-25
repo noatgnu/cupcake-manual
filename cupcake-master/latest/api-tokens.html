@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API tokens · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" aria-current="page">API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>API tokens</h1>
+<article class="manual"><p>A token lets a script manage one instance through cupcake-master's API, as the instance's owner, without staff
+powers. Tokens are made on the instance's page under <strong>API access</strong>.</p>
+<figure class="shot"><img src="img/steps-api-tokens--1-api-access.webp" alt="API access on an instance&#x27;s page lists the tokens that let scripts manage it." loading="lazy"><figcaption>API access on an instance&#x27;s page lists the tokens that let scripts manage it.</figcaption></figure>
+
+<h2 id="creating-a-token">Creating a token</h2>
+<p>Name the token, choose what it may do and when it expires, then choose <strong>Create token</strong>.</p>
+<figure class="shot"><img src="img/steps-api-tokens--2-filled.webp" alt="Name the token, choose what it may do and when it expires, then choose Create token." loading="lazy"><figcaption>Name the token, choose what it may do and when it expires, then choose Create token.</figcaption></figure>
+
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Allows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>Seeing the instance, its tasks and its domains</td>
+</tr>
+<tr>
+<td>Write</td>
+<td>Also changing its settings, images, domains, backups and state</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>Also restoring and deleting backups, rotating its secret key and resetting its admin password</td>
+</tr>
+</tbody>
+</table>
+<p>The token is shown once. Copy it straight away and send it as <code>Authorization: Bearer &lt;token&gt;</code>.</p>
+<figure class="shot"><img src="img/steps-api-tokens--3-shown-once.webp" alt="Copy the token straight away; it is shown only once." loading="lazy"><figcaption>Copy the token straight away; it is shown only once.</figcaption></figure>
+
+<h2 id="replacing-and-revoking">Replacing and revoking</h2>
+<p><strong>Replace the token</strong> gives a new one, shown once; the old one stops working at once.</p>
+<figure class="shot"><img src="img/steps-api-tokens--4-replaced.webp" alt="Replace the token gives a new one, shown once; the old one stops working at once." loading="lazy"><figcaption>Replace the token gives a new one, shown once; the old one stops working at once.</figcaption></figure>
+
+<p><strong>Revoke</strong> removes it.</p>
+<figure class="shot"><img src="img/steps-api-tokens--5-revoked.webp" alt="Revoke removes the token." loading="lazy"><figcaption>Revoke removes the token.</figcaption></figure>
+
+<p>A token stops working when it expires, is revoked, or its owner's account is suspended. An instance has at most 10
+tokens.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

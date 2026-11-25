@@ -1,0 +1,20 @@
+{
+ "app": "cupcake-master",
+ "version": "latest",
+ "built": "2026-11-25T14:13:49+00:00",
+ "screenshots_label": "pi-k3s-20261124",
+ "screens": {
+  "account_login": "getting-started.html",
+  "dashboard:index": "getting-started.html",
+  "dashboard:new_instance": "instances.html",
+  "dashboard:instance_detail": "instances.html",
+  "dashboard:domains": "domains.html",
+  "dashboard:backup_storage": "backups.html",
+  "dashboard:remote_access": "remote-access.html",
+  "dashboard:trust": "trust.html",
+  "dashboard:users": "users.html",
+  "dashboard:models": "models.html",
+  "dashboard:logs": "logs.html",
+  "dashboard:instance_logs": "logs.html"
+ }
+}

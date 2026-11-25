@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting started · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" aria-current="page">Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Getting started</h1>
+<article class="manual"><p>cupcake-master creates and looks after Cupcake instances on a Kubernetes cluster, such as a set of Raspberry Pis. Each
+instance is a separate Cupcake with its own database, files and address.</p>
+<h2 id="signing-in">Signing in</h2>
+<p>Open cupcake-master's address in a browser, for example <code>https://cupcake-k3s.local</code>, and sign in with your email
+address and password. On a Pi cluster, the first admin login is in <code>cupcake-k3s-credentials.txt</code> on the control
+plane's boot partition.</p>
+<figure class="shot"><img src="img/steps-sign-in--1-sign-in-form.webp" alt="The sign-in page of cupcake-master." loading="lazy"><figcaption>The sign-in page of cupcake-master.</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-sign-in--2-sign-in-filled.webp" alt="Enter the email address and password of your account, then choose Sign in." loading="lazy"><figcaption>Enter the email address and password of your account, then choose Sign in.</figcaption></figure>
+
+<p>A wrong email address or password is refused:</p>
+<figure class="shot"><img src="img/steps-sign-in--0-wrong-password.webp" alt="A wrong email address or password is refused with a message." loading="lazy"><figcaption>A wrong email address or password is refused with a message.</figcaption></figure>
+
+<p>After signing in you see your instances:</p>
+<figure class="shot"><img src="img/steps-sign-in--3-signed-in.webp" alt="After signing in, cupcake-master opens on the Instances page." loading="lazy"><figcaption>After signing in, cupcake-master opens on the Instances page.</figcaption></figure>
+
+<h2 id="around-the-screen">Around the screen</h2>
+<p>The top menu leads to every page. Staff see Models, Users, Domains, Backups, Remote access and Logs as well.</p>
+<p>Icon buttons name their action when the pointer rests on them:</p>
+<figure class="shot"><img src="img/screens--12-tooltip.webp" alt="Icon buttons name their action when the pointer rests on them." loading="lazy"><figcaption>Icon buttons name their action when the pointer rests on them.</figcaption></figure>
+
+<h2 id="notifications">Notifications</h2>
+<p>The bell shows what cupcake-master has to tell you, such as a finished or failed task, an instance over its quota or a
+certificate about to expire. Unread ones are counted on the bell.</p>
+<figure class="shot"><img src="img/screens--10-notification-menu.webp" alt="The bell opens the latest notifications; unread ones are marked." loading="lazy"><figcaption>The bell opens the latest notifications; unread ones are marked.</figcaption></figure>
+
+<p>All of them are on the Notifications page:</p>
+<figure class="shot"><img src="img/screens--09-notifications.webp" alt="Notifications lists everything cupcake-master has told you, newest first." loading="lazy"><figcaption>Notifications lists everything cupcake-master has told you, newest first.</figcaption></figure>
+
+<h2 id="appearance">Appearance</h2>
+<p>The account menu chooses a light, dark or automatic appearance, and signs you out. Automatic follows your computer.</p>
+<figure class="shot"><img src="img/screens--11-account-menu.webp" alt="The account menu chooses the light, dark or automatic appearance and signs out." loading="lazy"><figcaption>The account menu chooses the light, dark or automatic appearance and signs out.</figcaption></figure>
+
+<figure class="shot"><img src="img/screens-dark--01-instances.webp" alt="The Instances page lists every Cupcake instance with its state, address, images and owner. In the dark theme, which follows the computer&#x27;s setting by default." loading="lazy"><figcaption>The Instances page lists every Cupcake instance with its state, address, images and owner. In the dark theme, which follows the computer&#x27;s setting by default.</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

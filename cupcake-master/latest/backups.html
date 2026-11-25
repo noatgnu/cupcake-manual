@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backups and restore · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" aria-current="page">Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" >Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Backups and restore</h1>
+<article class="manual"><p>Every active instance is backed up each night at 02:00: its database and its uploaded files. cupcake-master backs up its
+own database at 04:30. A backup can also be made at any time with <strong>Back up now</strong> on an instance's page.</p>
+<figure class="shot"><img src="img/steps-backup--1-instance.webp" alt="Back up now is among the actions at the top of an instance&#x27;s page." loading="lazy"><figcaption>Back up now is among the actions at the top of an instance&#x27;s page.</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-backup--2-queued.webp" alt="The backup is queued and shown in the task history." loading="lazy"><figcaption>The backup is queued and shown in the task history.</figcaption></figure>
+
+<p>When it finishes, the backup is listed under Backups on the instance's page.</p>
+<figure class="shot"><img src="img/steps-backup--3-listed.webp" alt="When it finishes, the backup is listed under Backups, where it can be restored or deleted." loading="lazy"><figcaption>When it finishes, the backup is listed under Backups, where it can be restored or deleted.</figcaption></figure>
+
+<h2 id="how-long-backups-are-kept">How long backups are kept</h2>
+<p>Everything from the last 24 hours is kept, so a backup made before an upgrade stays. Older ones are thinned to the
+newest backup of each of the 7 most recent days and of the 4 most recent weeks. The same applies to the copies on the
+backup target.</p>
+<h2 id="copying-backups-off-the-node">Copying backups off the node</h2>
+<p>Backups are first kept on the cluster's own disk. If that disk fails, they are lost with the data, so set up a backup
+target on the <strong>Backups</strong> page in the top menu (staff only). Every night, after cupcake-master's own backup, everything
+is copied there.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>You need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3-compatible storage</td>
+<td>The endpoint, bucket, access key and secret key; works with institutional S3, MinIO, Backblaze B2 and Wasabi</td>
+</tr>
+<tr>
+<td>NFS share</td>
+<td>The server and export; the export must let the cluster write as root</td>
+</tr>
+<tr>
+<td>SMB/Windows share</td>
+<td>The server, share, user, password and domain</td>
+</tr>
+</tbody>
+</table>
+<p>Choose <strong>Test</strong> to check the target can be reached and written to, and <strong>Copy now</strong> to copy straight away. The result
+of the last copy or test is shown next to the settings. Staff are notified, also by email, when a nightly backup or
+copy fails.</p>
+<p>Copies on the target are only removed once they are past the retention above, and never when the cluster has lost its
+own backups of an instance, so a replaced disk cannot empty the target.</p>
+<h2 id="restoring-an-instance">Restoring an instance</h2>
+<p>On the instance's page, under Backups, choose <strong>Restore this backup</strong> next to the backup to go back to, and confirm.
+This overwrites the instance's database with the backup and puts back the uploaded files it holds; files uploaded since
+are kept. <strong>Delete this backup</strong> removes one for good.</p>
+<h2 id="rebuilding-after-losing-the-cluster">Rebuilding after losing the cluster</h2>
+<p>With a backup target, everything needed to rebuild is off the node: cupcake-master's database in the
+<code>_cupcake-master</code> folder and each instance's backups in a folder named after it. Set up a new cluster, restore
+cupcake-master's database, then restore each instance from its newest backup.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

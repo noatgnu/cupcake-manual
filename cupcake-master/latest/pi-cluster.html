@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setting up a Pi cluster · cupcake-master manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">cupcake-master manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./instances.html" >Instances</a></li>
+        <li><a href="./api-tokens.html" >API tokens</a></li>
+        <li><a href="./domains.html" >Domains and certificates</a></li>
+        <li><a href="./backups.html" >Backups and restore</a></li>
+        <li><a href="./suspend-and-delete.html" >Suspending and deleting instances</a></li>
+        <li><a href="./remote-access.html" >Remote access</a></li>
+        <li><a href="./trust.html" >Trusting the cluster's certificates</a></li>
+        <li><a href="./users.html" >Users and sign-up</a></li>
+        <li><a href="./models.html" >Transcription models</a></li>
+        <li><a href="./logs.html" >Logs</a></li>
+        <li><a href="./pi-cluster.html" aria-current="page">Setting up a Pi cluster</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Setting up a Pi cluster</h1>
+<article class="manual"><p>A Raspberry Pi becomes a k3s control plane or worker from files copied onto the boot partition of its freshly
+flashed card, next to the files already there. Each file is read on the next boot.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cupcake-k3s.txt</code></td>
+<td>Required: <code>ROLE=server</code> for the control plane or <code>ROLE=agent</code> for a worker, and the same <code>TOKEN</code> on every Pi</td>
+</tr>
+<tr>
+<td><code>cupcake-wifi.txt</code></td>
+<td>Connects to a Wi-Fi network</td>
+</tr>
+<tr>
+<td><code>cupcake-storage.txt</code></td>
+<td>Keeps k3s's data on a USB drive instead of the SD card; recommended</td>
+</tr>
+<tr>
+<td><code>cupcake-tailscale.txt</code></td>
+<td><code>AUTHKEY</code> joins the Pi to your tailnet; <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> set up the Tailscale operator</td>
+</tr>
+<tr>
+<td><code>cupcake-cloudflared.txt</code></td>
+<td><code>TUNNEL_TOKEN</code> connects a Cloudflare tunnel</td>
+</tr>
+<tr>
+<td><code>cupcake-selftest.txt</code></td>
+<td>Runs the self-test on that boot</td>
+</tr>
+</tbody>
+</table>
+<p>Files with secrets are removed from the card once they are used. Problems are written to <code>cupcake-k3s-error.txt</code>, and
+the admin login to <code>cupcake-k3s-credentials.txt</code>.</p>
+<h2 id="following-the-setup">Following the setup</h2>
+<p>While a Pi sets up, it shows each step at <code>http://&lt;host name&gt;.local:8080</code>, for example <code>http://cupcake-k3s.local:8080</code>,
+and over Tailscale once it has joined. The page stays for an hour after setup finishes.</p>
+<figure class="shot"><img src="img/k3s-setup--1-progress.webp" alt="Each k3s node shows its setup steps at http://&lt;host name&gt;.local:8080 while it sets up." loading="lazy"><figcaption>Each k3s node shows its setup steps at http://&lt;host name&gt;.local:8080 while it sets up.</figcaption></figure>
+
+<h2 id="checking-a-pi">Checking a Pi</h2>
+<p>Copy <code>cupcake-selftest.txt</code> onto its boot partition and restart it. After up to 15 minutes, <code>cupcake-selftest-report.txt</code>
+next to it says whether setup, k3s, the images, the USB drive, cupcake-master and remote access work. The activity light
+shows a heartbeat for pass and a fast blink for failure.</p>
+<h2 id="keeping-the-data-safe">Keeping the data safe</h2>
+<p>Use a USB SSD with <code>cupcake-storage.txt</code> rather than the SD card, a small UPS, and a <a href="./backups.html">backup target</a> so a
+copy of every night's backups leaves the cluster.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>
