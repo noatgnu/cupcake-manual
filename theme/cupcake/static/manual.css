@@ -28,3 +28,6 @@ figure.shot figcaption { font-size: 0.8125rem; color: var(--muted); margin-top: 
 .card span { color: var(--muted); font-size: 0.8125rem; }
 .result { margin-bottom: 0.9rem; }
 .result p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.8125rem; }
+.version { font-size: 0.75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 0.5rem; }
+#manual-versions { font-size: 0.8125rem; padding: 0.15rem 0.3rem; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--fg); }
+.notice { padding: 0.5rem 0.75rem; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); font-size: 0.875rem; }

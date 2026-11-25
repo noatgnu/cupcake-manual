@@ -37,8 +37,16 @@ The `.tar.gz` goes into an app at build time; cupcake-master takes it with
 ## Screenshots and publishing
 
 The screenshots the manual uses are kept in `screenshots/<app>/`, copied from the client tests' screenshot folder
-after a run. On every push to `main`, CI tests the build, builds each manual, publishes the bundles as assets of the
-`manual` release, which the apps' image builds download, and deploys the sites to GitHub Pages.
+after a run, so each version of the manual keeps the screenshots of its own release.
+
+- A push to `main` builds the **latest** manual, describing what is in development: its bundle is on the `manual`
+  release, which development builds of the apps bake in, and it is online at `<pages>/cupcake-master/latest/`.
+- Releasing cupcake-master `vX.Y.Z` (a tag in its repository): tag this repository `cupcake-master-vX.Y.Z` once the
+  manual describes that release. The bundle goes on a release of that name, which the image build of `vX.Y.Z` bakes
+  in, and the site is kept online at `<pages>/cupcake-master/vX.Y.Z/` next to the earlier versions.
+
+The sites are published on the `gh-pages` branch; GitHub Pages must serve that branch. Online, each manual has a
+version menu and says when a newer release exists.
 
 ## Tests
 

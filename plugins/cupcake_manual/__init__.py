@@ -66,6 +66,7 @@ def _finish(pelican):
                       "text": _plain(page.content)})
     (output / "screens.json").write_text(json.dumps({
         "app": pelican.settings["MANUAL_APP"],
+        "version": pelican.settings["MANUAL_VERSION"],
         "built": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "screenshots_label": STATE["label"],
         "screens": screens,

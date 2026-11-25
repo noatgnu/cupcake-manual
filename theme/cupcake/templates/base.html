@@ -9,6 +9,8 @@
 <body>
   <header class="top">
     <a class="brand" href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
+    <span class="version" id="manual-version" data-version="{{ MANUAL_VERSION }}">{{ MANUAL_VERSION }}</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
     <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
   </header>
   <div class="layout">
@@ -20,11 +22,13 @@
       </ul>
     </nav>
     <main>
+      <p id="manual-older" class="notice" hidden></p>
       <div id="manual-results" hidden></div>
       <div id="manual-content">{% block content %}{% endblock %}</div>
     </main>
   </div>
   <script src="{{ SITEURL }}/search-index.js"></script>
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/search.js"></script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/versions.js"></script>
 </body>
 </html>

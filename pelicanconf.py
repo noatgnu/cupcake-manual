@@ -5,6 +5,7 @@ import os
 MANUAL_APP = os.environ.get("MANUAL_APP", "cupcake-master")
 MANUAL_SCREENSHOTS = os.environ.get("MANUAL_SCREENSHOTS", "")
 SITENAME = os.environ.get("MANUAL_TITLE", "Manual")
+MANUAL_VERSION = os.environ.get("MANUAL_VERSION", "latest")
 SITEURL = ""
 RELATIVE_URLS = True
 TIMEZONE = "UTC"

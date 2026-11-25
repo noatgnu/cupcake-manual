@@ -3,12 +3,11 @@ name: Manual
 on:
   push:
     branches: [main]
+    tags: ["cupcake-master-v*"]
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: manual
@@ -19,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -32,43 +33,69 @@ jobs:
       - name: Test
         run: poetry run pytest
 
+      - name: Which version
+        id: version
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/cupcake-master-v* ]]; then
+            echo "version=${GITHUB_REF_NAME#cupcake-master-}" >> "$GITHUB_OUTPUT"
+            echo "release=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=latest" >> "$GITHUB_OUTPUT"
+            echo "release=manual" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build the cupcake-master manual
         run: |
           poetry run python -m manual --app cupcake-master --title "cupcake-master manual" \
-            --screenshots screenshots/cupcake-master --out site/cupcake-master \
-            --archive cupcake-master-manual.tar.gz
+            --version "${{ steps.version.outputs.version }}" --screenshots screenshots/cupcake-master \
+            --out "site/cupcake-master" --archive cupcake-master-manual.tar.gz
 
-      - name: Add the front page listing the manuals
+      - name: Publish the bundle for the app's image builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE: ${{ steps.version.outputs.release }}
         run: |
-          cat > site/index.html <<'HTML'
+          if [ "$RELEASE" = manual ]; then
+            gh release delete manual --cleanup-tag --yes 2>/dev/null || true
+            gh release create manual cupcake-master-manual.tar.gz --target "${GITHUB_SHA}" --title "Manual bundles (development)" \
+              --notes "Built from ${GITHUB_SHA}; development builds of the apps use these." --latest=false --prerelease
+          else
+            gh release create "$RELEASE" cupcake-master-manual.tar.gz --verify-tag --title "$RELEASE" \
+              --notes "The cupcake-master manual for ${RELEASE#cupcake-master-}; images of that release bake it in."
+          fi
+
+      - name: Publish this version online
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: site/cupcake-master
+          destination_dir: cupcake-master/${{ steps.version.outputs.version }}
+          keep_files: true
+
+      - name: List the published versions
+        run: |
+          mkdir -p root/cupcake-master
+          newest=$(git tag -l 'cupcake-master-v*' --sort=-v:refname | head -1 | sed 's/^cupcake-master-//')
+          versions=$(git tag -l 'cupcake-master-v*' --sort=-v:refname | sed 's/^cupcake-master-//' | jq -R . | jq -sc '["latest"] + .')
+          jq -n --argjson versions "$versions" --arg newest "$newest" '{versions: $versions, newest: $newest}' \
+            > root/cupcake-master/versions.json
+          target="latest"
+          [ -n "$newest" ] && target="$newest"
+          cat > root/index.html <<HTML
           <!doctype html>
           <html lang="en">
           <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cupcake manuals</title></head>
           <body style="font: 15px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem">
           <h1>Cupcake manuals</h1>
-          <ul><li><a href="cupcake-master/index.html">cupcake-master</a></li></ul>
+          <ul><li><a href="cupcake-master/${target}/index.html">cupcake-master</a> (${target}; other versions from its version menu)</li></ul>
           </body>
           </html>
           HTML
+          cat root/cupcake-master/versions.json
 
-      - name: Publish the bundle for the apps' image builds
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release delete manual --cleanup-tag --yes 2>/dev/null || true
-          gh release create manual cupcake-master-manual.tar.gz --target "${GITHUB_SHA}" --title "Manual bundles" \
-            --notes "Offline manual bundles built from ${GITHUB_SHA}; the apps bake these into their images." --latest=false
-
-      - uses: actions/upload-pages-artifact@v3
+      - name: Publish the version list
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: site
-
-  pages:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ github.token }}
+          publish_dir: root
+          keep_files: true

@@ -1,6 +1,7 @@
 """Build one app's manual with Pelican into an offline site, and optionally a .tar.gz of it.
 
-  python -m manual --app cupcake-master --title "cupcake-master manual" --screenshots <folder> --out dist/cupcake-master
+  python -m manual --app cupcake-master --title "cupcake-master manual" --version v0.4.0 --screenshots <folder> \
+    --out dist/cupcake-master
 """
 
 import argparse
@@ -17,11 +18,12 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--app", required=True)
     parser.add_argument("--title", required=True)
+    parser.add_argument("--version", default="latest", help="the app release the manual describes, or latest")
     parser.add_argument("--screenshots", required=True, help="folder with the client tests' manifest.json")
     parser.add_argument("--out", required=True)
     parser.add_argument("--archive", help="also write the site as a .tar.gz with index.html at its top")
     args = parser.parse_args(argv)
-    env = {**os.environ, "MANUAL_APP": args.app, "MANUAL_TITLE": args.title,
+    env = {**os.environ, "MANUAL_APP": args.app, "MANUAL_TITLE": args.title, "MANUAL_VERSION": args.version,
            "MANUAL_SCREENSHOTS": str(Path(args.screenshots).resolve())}
     out = Path(args.out).resolve()
     result = subprocess.run(
