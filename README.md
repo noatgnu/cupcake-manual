@@ -45,7 +45,8 @@ after a run, so each version of the manual keeps the screenshots of its own rele
   manual describes that release. The bundle goes on a release of that name, which the image build of `vX.Y.Z` bakes
   in, and the site is kept online at `<pages>/cupcake-master/vX.Y.Z/` next to the earlier versions.
 
-The sites are published on the `gh-pages` branch; GitHub Pages must serve that branch. Online, each manual has a
+Every version is kept on the `gh-pages` branch, and each run deploys that branch to GitHub Pages, whose source is
+GitHub Actions. Online, each manual has a
 version menu and says when a newer release exists.
 
 ## Tests
