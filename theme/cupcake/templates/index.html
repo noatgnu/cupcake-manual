@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ SITENAME }}</h1>
+<div class="cards">
+  {% for item in pages %}
+  <a class="card" href="{{ SITEURL }}/{{ item.url }}"><strong>{{ item.title }}</strong><span>{{ item.summary|striptags }}</span></a>
+  {% endfor %}
+</div>
+{% endblock %}

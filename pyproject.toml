@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "cupcake-manual"
+version = "0.1.0"
+description = "The user manual of Cupcake, Cupcake Vanilla and cupcake-master, built into offline bundles shipped inside each app"
+authors = ["Toan Phung"]
+packages = [{ include = "manual" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+markdown = "^3.7"
+pyyaml = "^6.0"
+pillow = "^11.0"
+pelican = {version = "^4.12", extras = ["markdown"]}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

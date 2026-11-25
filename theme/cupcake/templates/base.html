@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        {% for item in pages %}
+        <li><a href="{{ SITEURL }}/{{ item.url }}" {% if page and item.url == page.url %}aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <main>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content">{% block content %}{% endblock %}</div>
+    </main>
+  </div>
+  <script src="{{ SITEURL }}/search-index.js"></script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/search.js"></script>
+</body>
+</html>
