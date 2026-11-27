@@ -1,7 +1,7 @@
 {
   "url": "https://cupcake-k3s.tail1e420d.ts.net",
-  "label": "pi-k3s-20261124",
-  "taken": "2026-11-24T17:41:04+0000",
+  "label": "v0.0.6",
+  "taken": "2026-11-27T15:56:54+0000",
   "screenshots": [
     {
       "name": "1-progress",
@@ -80,6 +80,12 @@
       "lineup": "screens",
       "file": "screens/12-tooltip.png",
       "caption": "Icon buttons name their action when the pointer rests on them."
+    },
+    {
+      "name": "13-backups",
+      "lineup": "screens",
+      "file": "screens/13-backups.png",
+      "caption": "Backups sets where every night's backups are copied off the node, and lists the backups kept on it."
     },
     {
       "name": "01-instances",
@@ -241,7 +247,7 @@
       "name": "2-filled",
       "lineup": "steps-instance-domain",
       "file": "steps-instance-domain/2-filled.png",
-      "caption": "Enter another host name, such as ct-8765a7-docs.local, and how it is reached, then choose Add domain. Under the cluster's domain an instance may use its slug followed by -<name>."
+      "caption": "Enter another host name, such as ct-b9c044-docs.local, and how it is reached, then choose Add domain. Under the cluster's domain an instance may use its slug followed by -<name>."
     },
     {
       "name": "3-added",
