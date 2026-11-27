@@ -3,7 +3,7 @@ name: Manual
 on:
   push:
     branches: [main]
-    tags: ["cupcake-master-v*"]
+    tags: ["cupcake-master-v*", "cupcake-vanilla-[0-9]*", "cupcake-[0-9]*"]
   workflow_dispatch:
 
 permissions:
@@ -35,65 +35,85 @@ jobs:
       - name: Test
         run: poetry run pytest
 
-      - name: Which version
-        id: version
+      - name: Which manuals
+        id: which
         run: |
-          if [[ "${GITHUB_REF}" == refs/tags/cupcake-master-v* ]]; then
-            echo "version=${GITHUB_REF_NAME#cupcake-master-}" >> "$GITHUB_OUTPUT"
+          case "${GITHUB_REF}" in
+            refs/tags/cupcake-master-v*) app=cupcake-master; version="${GITHUB_REF_NAME#cupcake-master-}" ;;
+            refs/tags/cupcake-vanilla-*) app=cupcake-vanilla; version="${GITHUB_REF_NAME#cupcake-vanilla-}" ;;
+            refs/tags/cupcake-*) app=cupcake; version="${GITHUB_REF_NAME#cupcake-}" ;;
+            *) app=""; version=latest ;;
+          esac
+          if [ -n "$app" ]; then
+            echo "apps=$app" >> "$GITHUB_OUTPUT"
             echo "release=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
           else
-            echo "version=latest" >> "$GITHUB_OUTPUT"
+            echo "apps=cupcake-master cupcake cupcake-vanilla" >> "$GITHUB_OUTPUT"
             echo "release=manual" >> "$GITHUB_OUTPUT"
           fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Build the cupcake-master manual
+      - name: Build the manuals
+        env:
+          APPS: ${{ steps.which.outputs.apps }}
+          VERSION: ${{ steps.which.outputs.version }}
         run: |
-          poetry run python -m manual --app cupcake-master --title "cupcake-master manual" \
-            --version "${{ steps.version.outputs.version }}" --screenshots screenshots/cupcake-master \
-            --out "site/cupcake-master" --archive cupcake-master-manual.tar.gz
+          declare -A titles=([cupcake-master]="cupcake-master manual" [cupcake]="Cupcake manual" [cupcake-vanilla]="Cupcake Vanilla manual")
+          for app in $APPS; do
+            poetry run python -m manual --app "$app" --title "${titles[$app]}" --version "$VERSION" \
+              --screenshots "screenshots/$app" --out "publish/$app/$VERSION" --archive "$app-manual.tar.gz"
+          done
 
-      - name: Publish the bundle for the app's image builds
+      - name: Publish the bundles for the apps' image builds
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE: ${{ steps.version.outputs.release }}
+          APPS: ${{ steps.which.outputs.apps }}
+          RELEASE: ${{ steps.which.outputs.release }}
         run: |
+          bundles=$(for app in $APPS; do printf '%s-manual.tar.gz ' "$app"; done)
           if [ "$RELEASE" = manual ]; then
             gh release delete manual --cleanup-tag --yes 2>/dev/null || true
-            gh release create manual cupcake-master-manual.tar.gz --target "${GITHUB_SHA}" --title "Manual bundles (development)" \
+            gh release create manual $bundles --target "${GITHUB_SHA}" --title "Manual bundles (development)" \
               --notes "Built from ${GITHUB_SHA}; development builds of the apps use these." --latest=false --prerelease
           else
-            gh release create "$RELEASE" cupcake-master-manual.tar.gz --verify-tag --title "$RELEASE" \
-              --notes "The cupcake-master manual for ${RELEASE#cupcake-master-}; images of that release bake it in."
+            gh release create "$RELEASE" $bundles --verify-tag --title "$RELEASE" \
+              --notes "The $APPS manual for ${{ steps.which.outputs.version }}; images of that release bake it in."
           fi
 
-      - name: Publish this version online
+      - name: Publish these versions online
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ github.token }}
-          publish_dir: site/cupcake-master
-          destination_dir: cupcake-master/${{ steps.version.outputs.version }}
+          publish_dir: publish
           keep_files: true
 
       - name: List the published versions
         run: |
-          mkdir -p root/cupcake-master
-          newest=$(git tag -l 'cupcake-master-v*' --sort=-v:refname | head -1 | sed 's/^cupcake-master-//')
-          versions=$(git tag -l 'cupcake-master-v*' --sort=-v:refname | sed 's/^cupcake-master-//' | jq -R . | jq -sc '["latest"] + .')
-          jq -n --argjson versions "$versions" --arg newest "$newest" '{versions: $versions, newest: $newest}' \
-            > root/cupcake-master/versions.json
-          target="latest"
-          [ -n "$newest" ] && target="$newest"
+          declare -A patterns=([cupcake-master]="cupcake-master-v*" [cupcake]="cupcake-[0-9]*" [cupcake-vanilla]="cupcake-vanilla-[0-9]*")
+          declare -A prefixes=([cupcake-master]="cupcake-master-" [cupcake]="cupcake-" [cupcake-vanilla]="cupcake-vanilla-")
+          declare -A names=([cupcake-master]="cupcake-master" [cupcake]="Cupcake" [cupcake-vanilla]="Cupcake Vanilla")
+          items=""
+          for app in cupcake cupcake-vanilla cupcake-master; do
+            mkdir -p "root/$app"
+            tags=$(git tag -l "${patterns[$app]}" --sort=-v:refname | sed "s/^${prefixes[$app]}//")
+            newest=$(printf '%s\n' "$tags" | sed '/^$/d' | head -1)
+            versions=$(printf '%s\n' "$tags" | sed '/^$/d' | jq -R . | jq -sc '["latest"] + .')
+            jq -n --argjson versions "$versions" --arg newest "$newest" '{versions: $versions, newest: $newest}' \
+              > "root/$app/versions.json"
+            target="${newest:-latest}"
+            items="$items<li><a href=\"$app/$target/index.html\">${names[$app]}</a> ($target; other versions from its version menu)</li>"
+            echo "$app: $(cat "root/$app/versions.json")"
+          done
           cat > root/index.html <<HTML
           <!doctype html>
           <html lang="en">
           <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cupcake manuals</title></head>
           <body style="font: 15px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem">
           <h1>Cupcake manuals</h1>
-          <ul><li><a href="cupcake-master/${target}/index.html">cupcake-master</a> (${target}; other versions from its version menu)</li></ul>
+          <ul>$items</ul>
           </body>
           </html>
           HTML
-          cat root/cupcake-master/versions.json
 
       - name: Publish the version list
         uses: peaceiris/actions-gh-pages@v4

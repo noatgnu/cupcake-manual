@@ -1,0 +1,175 @@
+{
+  "host": "docs-cupcake.local",
+  "label": "0.0.34",
+  "taken": "2026-11-27T17:36:28+0000",
+  "screenshots": [
+    {
+      "name": "vanilla-admin-site",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-admin-site.png",
+      "caption": "Site settings"
+    },
+    {
+      "name": "vanilla-admin-users",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-admin-users.png",
+      "caption": "Managing users"
+    },
+    {
+      "name": "vanilla-column-templates",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-column-templates.png",
+      "caption": "Column templates"
+    },
+    {
+      "name": "vanilla-devices",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-devices.png",
+      "caption": "Device tokens"
+    },
+    {
+      "name": "vanilla-favorites",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-favorites.png",
+      "caption": "Favourite values"
+    },
+    {
+      "name": "vanilla-home",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-home.png",
+      "caption": "Metadata management"
+    },
+    {
+      "name": "vanilla-lab-groups",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-lab-groups.png",
+      "caption": "Lab groups"
+    },
+    {
+      "name": "vanilla-login",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-login.png",
+      "caption": "Signing in"
+    },
+    {
+      "name": "vanilla-profile",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-profile.png",
+      "caption": "Your profile"
+    },
+    {
+      "name": "vanilla-table-editor",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-table-editor.png",
+      "caption": "Editing a metadata table"
+    },
+    {
+      "name": "vanilla-table-templates",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-table-templates.png",
+      "caption": "Table templates"
+    },
+    {
+      "name": "vanilla-tables",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-tables.png",
+      "caption": "Metadata tables"
+    },
+    {
+      "name": "vanilla-vocabularies",
+      "lineup": "gui-vanilla",
+      "file": "gui-vanilla/vanilla-vocabularies.png",
+      "caption": "Vocabularies"
+    },
+    {
+      "name": "table-01-list",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-01-list.png",
+      "caption": "The list of metadata tables, with New Table at the top"
+    },
+    {
+      "name": "table-02-new-table",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-02-new-table.png",
+      "caption": "Naming the new table and giving its number of samples"
+    },
+    {
+      "name": "table-03-created",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-03-created.png",
+      "caption": "The new table in the list"
+    },
+    {
+      "name": "table-04-empty-table",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-04-empty-table.png",
+      "caption": "The new table, ready for its samples"
+    },
+    {
+      "name": "table-05-import-menu",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-05-import-menu.png",
+      "caption": "Choosing Import SDRF File from the Import menu"
+    },
+    {
+      "name": "table-06-confirm-import",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-06-confirm-import.png",
+      "caption": "Confirming the import of the SDRF file into the table"
+    },
+    {
+      "name": "table-07-imported",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-07-imported.png",
+      "caption": "The samples and columns read from the SDRF file"
+    },
+    {
+      "name": "table-08-export-menu",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/table-08-export-menu.png",
+      "caption": "Exporting the table as SDRF or Excel"
+    },
+    {
+      "name": "vocabulary-01-list",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-01-list.png",
+      "caption": "The vocabularies available for metadata columns"
+    },
+    {
+      "name": "vocabulary-02-new",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-02-new.png",
+      "caption": "Describing a new custom vocabulary"
+    },
+    {
+      "name": "vocabulary-03-created",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-03-created.png",
+      "caption": "The new vocabulary in the list, still without terms"
+    },
+    {
+      "name": "vocabulary-04-import",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-04-import.png",
+      "caption": "Choosing which file columns hold the names, ids and synonyms"
+    },
+    {
+      "name": "vocabulary-05-imported",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-05-imported.png",
+      "caption": "The vocabulary after its terms were imported"
+    },
+    {
+      "name": "vocabulary-06-terms",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-06-terms.png",
+      "caption": "Browsing and editing the terms of the vocabulary"
+    },
+    {
+      "name": "vocabulary-07-delete",
+      "lineup": "steps-vanilla",
+      "file": "steps-vanilla/vocabulary-07-delete.png",
+      "caption": "Deleting a vocabulary that no column uses"
+    }
+  ]
+}

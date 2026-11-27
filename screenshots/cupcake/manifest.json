@@ -1,0 +1,283 @@
+{
+  "host": "docs-cupcake.local",
+  "label": "0.0.34",
+  "taken": "2026-11-27T17:36:28+0000",
+  "screenshots": [
+    {
+      "name": "cupcake-admin-site",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-admin-site.png",
+      "caption": "Site settings"
+    },
+    {
+      "name": "cupcake-admin-workers",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-admin-workers.png",
+      "caption": "Background workers"
+    },
+    {
+      "name": "cupcake-billing-prices",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-billing-prices.png",
+      "caption": "Service prices"
+    },
+    {
+      "name": "cupcake-billing-records",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-billing-records.png",
+      "caption": "Billing records"
+    },
+    {
+      "name": "cupcake-billing-tiers",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-billing-tiers.png",
+      "caption": "Service tiers"
+    },
+    {
+      "name": "cupcake-column-templates",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-column-templates.png",
+      "caption": "Metadata column templates"
+    },
+    {
+      "name": "cupcake-devices",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-devices.png",
+      "caption": "Device tokens"
+    },
+    {
+      "name": "cupcake-home",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-home.png",
+      "caption": "The home dashboard"
+    },
+    {
+      "name": "cupcake-instrument",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-instrument.png",
+      "caption": "An instrument"
+    },
+    {
+      "name": "cupcake-job-submit",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-job-submit.png",
+      "caption": "Submitting an instrument job"
+    },
+    {
+      "name": "cupcake-jobs",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-jobs.png",
+      "caption": "Instrument jobs"
+    },
+    {
+      "name": "cupcake-lab-groups",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-lab-groups.png",
+      "caption": "Lab groups"
+    },
+    {
+      "name": "cupcake-login",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-login.png",
+      "caption": "Signing in"
+    },
+    {
+      "name": "cupcake-messages",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-messages.png",
+      "caption": "Reading a message thread"
+    },
+    {
+      "name": "cupcake-notifications",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-notifications.png",
+      "caption": "Notifications"
+    },
+    {
+      "name": "cupcake-profile",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-profile.png",
+      "caption": "Your profile"
+    },
+    {
+      "name": "cupcake-projects",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-projects.png",
+      "caption": "Projects"
+    },
+    {
+      "name": "cupcake-protocol-editor",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-protocol-editor.png",
+      "caption": "Editing a protocol's sections and steps"
+    },
+    {
+      "name": "cupcake-protocols",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-protocols.png",
+      "caption": "Protocols"
+    },
+    {
+      "name": "cupcake-session",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-session.png",
+      "caption": "Working through a session step by step"
+    },
+    {
+      "name": "cupcake-session-timer",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-session-timer.png",
+      "caption": "A step timer running in a session"
+    },
+    {
+      "name": "cupcake-sessions",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-sessions.png",
+      "caption": "Sessions"
+    },
+    {
+      "name": "cupcake-storage",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-storage.png",
+      "caption": "A storage location"
+    },
+    {
+      "name": "cupcake-table-templates",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-table-templates.png",
+      "caption": "Metadata table templates"
+    },
+    {
+      "name": "cupcake-timers",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-timers.png",
+      "caption": "Timers"
+    },
+    {
+      "name": "cupcake-users",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-users.png",
+      "caption": "Managing users"
+    },
+    {
+      "name": "cupcake-vocabularies",
+      "lineup": "gui-cupcake",
+      "file": "gui-cupcake/cupcake-vocabularies.png",
+      "caption": "Vocabularies"
+    },
+    {
+      "name": "job-01-title",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-01-title.png",
+      "caption": "Naming the job and the project it belongs to"
+    },
+    {
+      "name": "job-02-lab-group",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-02-lab-group.png",
+      "caption": "Choosing the lab group and the staff who will run the job"
+    },
+    {
+      "name": "job-03-samples",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-03-samples.png",
+      "caption": "Giving the number of samples"
+    },
+    {
+      "name": "job-04-template",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-04-template.png",
+      "caption": "Searching for and choosing the metadata template for the samples"
+    },
+    {
+      "name": "job-05-review",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-05-review.png",
+      "caption": "Reviewing the job before submitting it"
+    },
+    {
+      "name": "job-06-ready",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-06-ready.png",
+      "caption": "The job's metadata table created, ready to submit"
+    },
+    {
+      "name": "job-07-submitted",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-07-submitted.png",
+      "caption": "The job after it was submitted"
+    },
+    {
+      "name": "job-08-staff-columns",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/job-08-staff-columns.png",
+      "caption": "The submitted job's metadata table showing only the columns staff fill in"
+    },
+    {
+      "name": "protocol-01-list",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-01-list.png",
+      "caption": "Your protocols, with Create Protocol at the top"
+    },
+    {
+      "name": "protocol-02-new",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-02-new.png",
+      "caption": "Naming and describing a new protocol"
+    },
+    {
+      "name": "protocol-03-editor",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-03-editor.png",
+      "caption": "The protocol editor, ready for sections and steps"
+    },
+    {
+      "name": "protocol-04-section",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-04-section.png",
+      "caption": "Adding a section and giving it a title and duration"
+    },
+    {
+      "name": "protocol-05-step",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-05-step.png",
+      "caption": "Writing a step of the section"
+    },
+    {
+      "name": "protocol-06-written",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-06-written.png",
+      "caption": "The protocol with its section and step"
+    },
+    {
+      "name": "protocol-07-new-session",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-07-new-session.png",
+      "caption": "Starting a session from the protocol"
+    },
+    {
+      "name": "protocol-08-sessions",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-08-sessions.png",
+      "caption": "The new session in your sessions, with Open Session beside it"
+    },
+    {
+      "name": "protocol-09-session",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-09-session.png",
+      "caption": "The session, showing the first step to carry out"
+    },
+    {
+      "name": "protocol-10-note",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-10-note.png",
+      "caption": "Writing a note on the step"
+    },
+    {
+      "name": "protocol-11-noted",
+      "lineup": "steps-cupcake",
+      "file": "steps-cupcake/protocol-11-noted.png",
+      "caption": "The note saved on the step for everyone in the session"
+    }
+  ]
+}
