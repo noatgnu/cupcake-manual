@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Storage and reagents · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" aria-current="page">Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Storage and reagents</h1>
+<article class="manual"><p><strong>Storage Management</strong> shows storage locations as a tree, such as rooms, freezers, racks and boxes, and the reagents
+kept in each.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-storage.webp" alt="A storage location" loading="lazy"><figcaption>A storage location</figcaption></figure>
+
+<h2 id="locations">Locations</h2>
+<p><strong>Add Storage</strong> adds a location, inside the selected one when one is selected. <strong>Manage Access</strong> chooses the lab groups
+that can use a location.</p>
+<h2 id="reagents">Reagents</h2>
+<p><strong>Add Reagent</strong> adds a reagent to the selected location with its quantity, unit, molecular weight, expiry date and
+notes. <strong>Notify on low stock</strong> sends a notification when its quantity falls below the threshold.</p>
+<p>Each reagent's actions:</p>
+<ul>
+<li><strong>Add Quantity</strong> and <strong>Reserve Quantity</strong> record what is added and taken; <strong>Usage Journal</strong> lists every change.</li>
+<li><strong>Documents</strong> keeps its safety data sheets, certificates and other files.</li>
+<li><strong>Manage Metadata</strong> describes it with SDRF fields.</li>
+<li><strong>Copy Share Link</strong> copies a link to it, and its access settings share it with lab groups, users or everyone.</li>
+</ul>
+<p><strong>Search reagents</strong> finds reagents by name, optionally in nested locations and by molecular weight. <strong>Scan Barcode</strong>
+finds them with the camera.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

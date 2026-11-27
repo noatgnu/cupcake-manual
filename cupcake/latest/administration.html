@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" aria-current="page">Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Administration</h1>
+<article class="manual"><h2 id="site-settings">Site settings</h2>
+<p><strong>Site Configuration</strong> sets the site's name, logo and colour, registration and ORCID sign-in, the reagent booking
+deletion window, and the default Whisper model for transcription. <strong>UI Feature Visibility</strong> shows or hides metadata
+tables, instruments, sessions, protocols, messages, notifications, storage, live sessions and billing.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-admin-site.webp" alt="Site settings" loading="lazy"><figcaption>Site settings</figcaption></figure>
+
+<h2 id="background-workers">Background workers</h2>
+<p><strong>Worker Status</strong> shows the background workers, the job each is running, and the queues. Only superusers see it.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-admin-workers.webp" alt="Background workers" loading="lazy"><figcaption>Background workers</figcaption></figure>
+
+<h2 id="users">Users</h2>
+<p><strong>User Management</strong> lists accounts and creates and edits them, with their active, staff and superuser roles.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-users.webp" alt="Managing users" loading="lazy"><figcaption>Managing users</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

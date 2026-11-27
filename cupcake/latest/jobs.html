@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instrument jobs · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" aria-current="page">Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Instrument jobs</h1>
+<article class="manual"><p>An instrument job asks the staff running an instrument to run your samples. Each job has a metadata table describing
+its samples.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-jobs.webp" alt="Instrument jobs" loading="lazy"><figcaption>Instrument jobs</figcaption></figure>
+
+<h2 id="submitting-a-job">Submitting a job</h2>
+<p><strong>Submit New Job</strong> walks through the submission:</p>
+<ol>
+<li>
+<p><strong>Job &amp; Project</strong>: name the job, and choose a project or create one.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--job-01-title.webp" alt="Naming the job and the project it belongs to" loading="lazy"><figcaption>Naming the job and the project it belongs to</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Lab Group &amp; Staff</strong>: choose the lab group and the staff who will run the job, and enter the funder and cost
+   centre.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--job-02-lab-group.webp" alt="Choosing the lab group and the staff who will run the job" loading="lazy"><figcaption>Choosing the lab group and the staff who will run the job</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Samples</strong>: enter the number of samples, which is the number of rows in the metadata table.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--job-03-samples.webp" alt="Giving the number of samples" loading="lazy"><figcaption>Giving the number of samples</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Template</strong>: choose the metadata table template for the samples.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--job-04-template.webp" alt="Searching for and choosing the metadata template for the samples" loading="lazy"><figcaption>Searching for and choosing the metadata template for the samples</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Review &amp; Submit</strong>: create the metadata table, fill in its columns, and submit.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--job-05-review.webp" alt="Reviewing the job before submitting it" loading="lazy"><figcaption>Reviewing the job before submitting it</figcaption></figure>
+
+<pre><code>
+</code></pre>
+<figure class="shot"><img src="img/steps-cupcake--job-06-ready.webp" alt="The job&#x27;s metadata table created, ready to submit" loading="lazy"><figcaption>The job&#x27;s metadata table created, ready to submit</figcaption></figure>
+
+<pre><code>
+</code></pre>
+<figure class="shot"><img src="img/steps-cupcake--job-07-submitted.webp" alt="The job after it was submitted" loading="lazy"><figcaption>The job after it was submitted</figcaption></figure>
+
+<p>Until it is submitted, a job is a draft: <strong>Continue Editing Draft</strong> returns to it.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-job-submit.webp" alt="Submitting an instrument job" loading="lazy"><figcaption>Submitting an instrument job</figcaption></figure>
+
+<h2 id="after-submitting">After submitting</h2>
+<p>Staff review the job and fill in the columns only they edit, such as the instrument settings.</p>
+<figure class="shot"><img src="img/steps-cupcake--job-08-staff-columns.webp" alt="The submitted job&#x27;s metadata table showing only the columns staff fill in" loading="lazy"><figcaption>The submitted job&#x27;s metadata table showing only the columns staff fill in</figcaption></figure>
+
+<p><strong>Instrument Jobs</strong> lists jobs by status (draft, submitted, pending, in progress, completed, cancelled) and type. A
+job's page shows its information, assigned staff, metadata table and timeline, and its annotations: notes, files,
+recordings and calculations, from you and from staff.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

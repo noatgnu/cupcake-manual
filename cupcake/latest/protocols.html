@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protocols · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" aria-current="page">Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Protocols</h1>
+<article class="manual"><p><strong>Protocols</strong> lists your protocols, those shared with you and public ones. Selecting one shows its description,
+number of steps, ratings of complexity and duration, and where it came from.</p>
+<figure class="shot"><img src="img/steps-cupcake--protocol-01-list.webp" alt="Your protocols, with Create Protocol at the top" loading="lazy"><figcaption>Your protocols, with Create Protocol at the top</figcaption></figure>
+
+<h2 id="creating-a-protocol">Creating a protocol</h2>
+<ol>
+<li>
+<p>Choose <strong>Create Protocol</strong>, then <strong>Create New</strong> and enter the title and an optional description. <strong>Enable for
+   public view</strong> lets others view and use it. <strong>Import from protocols.io</strong> imports a protocol from its protocols.io
+   address instead, with its steps, sections and reagents.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-02-new.webp" alt="Naming and describing a new protocol" loading="lazy"><figcaption>Naming and describing a new protocol</figcaption></figure>
+
+<ol>
+<li>
+<p>The editor opens.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-03-editor.webp" alt="The protocol editor, ready for sections and steps" loading="lazy"><figcaption>The protocol editor, ready for sections and steps</figcaption></figure>
+
+<ol>
+<li>
+<p>Add a section and give it a title and a duration.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-04-section.webp" alt="Adding a section and giving it a title and duration" loading="lazy"><figcaption>Adding a section and giving it a title and duration</figcaption></figure>
+
+<ol>
+<li>
+<p>Select the section and <strong>Add Step</strong>: describe the step and optionally give its duration.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-05-step.webp" alt="Writing a step of the section" loading="lazy"><figcaption>Writing a step of the section</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Save Protocol</strong>.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-06-written.webp" alt="The protocol with its section and step" loading="lazy"><figcaption>The protocol with its section and step</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-protocol-editor.webp" alt="Editing a protocol&#x27;s sections and steps" loading="lazy"><figcaption>Editing a protocol&#x27;s sections and steps</figcaption></figure>
+
+<h2 id="reagents-in-steps">Reagents in steps</h2>
+<p>A step can list the reagents it needs, with a quantity and unit. A <strong>scalable</strong> reagent's quantity is multiplied by
+its scaling factor. In the step's description, <code>%ID.name%</code>, <code>%ID.quantity%</code>, <code>%ID.scaled_quantity%</code> and <code>%ID.unit%</code>
+are replaced by the reagent's name, quantity, scaled quantity and unit, where <code>ID</code> is the step reagent's id; type a
+space and <code>%</code> in the description to insert them.</p>
+<h2 id="from-a-protocol">From a protocol</h2>
+<p><strong>Start Session</strong> starts a session from the protocol; see <a href="./sessions.html">Sessions</a>. <strong>Export to
+protocols.io</strong> copies it to protocols.io; see <a href="./protocols-io.html">protocols.io</a>.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

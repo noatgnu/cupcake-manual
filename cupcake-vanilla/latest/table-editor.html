@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editing a table · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" aria-current="page">Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Editing a table</h1>
+<article class="manual"><p>Opening a table shows its information (sample count, columns, owner, lab group, version, and whether it is locked or
+published) and its contents, as a <strong>List</strong> of columns or as a <strong>Table</strong> of samples by columns.</p>
+<figure class="shot"><img src="img/steps-vanilla--table-04-empty-table.webp" alt="The new table, ready for its samples" loading="lazy"><figcaption>The new table, ready for its samples</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-vanilla--vanilla-table-editor.webp" alt="Editing a metadata table" loading="lazy"><figcaption>Editing a metadata table</figcaption></figure>
+
+<h2 id="columns">Columns</h2>
+<p><strong>Add Column</strong> adds a column from a column template; columns follow the order of the table's SDRF schemas, and
+<strong>Reorder</strong> restores that order. Drag a column to move it. Each column is marked when it is required, read-only,
+hidden or filled automatically.</p>
+<p>A column's actions:</p>
+<ul>
+<li><strong>Edit default value</strong>: the value of every sample that has no value of its own.</li>
+<li><strong>Auto-fill values</strong>: fill samples from a template such as <code>sample {n}</code> or a numeric range (<strong>Basic</strong>), or generate
+  combinations of several columns' values for many samples (<strong>Advanced</strong>).</li>
+<li><strong>Edit column settings</strong>: its template, type, ontology, and whether it is mandatory, hidden, read-only or staff only.</li>
+<li><strong>View column history</strong>: every change, with its old and new values.</li>
+</ul>
+<p><strong>Filter columns</strong> shows only the columns whose names match.</p>
+<h2 id="values">Values</h2>
+<p>Click a cell to edit its value. The editor suggests terms from the column's ontology as you type, offers your
+favourite values and those of your lab group, and has quick choices such as <strong>Not Applicable</strong> and <strong>Not Available</strong>.
+Columns such as modifications, cleavage agents, ages, spiked compounds and m/z ranges have a structured editor that
+writes the SDRF value for you; turn it off to type the value directly. <strong>Apply to Samples</strong> writes the value to
+several samples at once, and <strong>Add to Favorites</strong> keeps it for later; see <a href="./favourites.html">Favourites</a>.</p>
+<p><strong>Search and Replace</strong> replaces every cell holding exactly one value, in one column or all of them, and optionally in
+the sample pools. It cannot be undone.</p>
+<h2 id="sample-pools">Sample pools</h2>
+<p><strong>Create Pool</strong> groups samples into a pool: choose the samples, or a range, and whether each is only pooled or also
+run on its own. A reference pool is marked as such. Pools are exported with the table.</p>
+<h2 id="the-table-itself">The table itself</h2>
+<p><strong>Edit</strong> changes the table's name, description, sample count, version and lab group. <strong>Delete Table</strong> removes it.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

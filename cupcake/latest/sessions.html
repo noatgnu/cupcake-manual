@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sessions · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" aria-current="page">Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Sessions</h1>
+<article class="manual"><p>A session is one run of one or more protocols. Everyone in the session sees the same steps, notes and timers.</p>
+<h2 id="starting-a-session">Starting a session</h2>
+<ol>
+<li>
+<p>On a protocol, choose <strong>Start Session</strong>, name the session and choose <strong>Create &amp; Start Session</strong>. A public session
+   can be viewed by everyone.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-07-new-session.webp" alt="Starting a session from the protocol" loading="lazy"><figcaption>Starting a session from the protocol</figcaption></figure>
+
+<ol>
+<li>
+<p><strong>Sessions</strong> lists your sessions; <strong>Open Session</strong> opens one.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-cupcake--protocol-08-sessions.webp" alt="The new session in your sessions, with Open Session beside it" loading="lazy"><figcaption>The new session in your sessions, with Open Session beside it</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-sessions.webp" alt="Sessions" loading="lazy"><figcaption>Sessions</figcaption></figure>
+
+<h2 id="working-through-the-steps">Working through the steps</h2>
+<p>The session shows the protocol's sections and the current step, with its instructions and the reagents it needs.
+<strong>Previous Step</strong> and <strong>Next Step</strong> move between steps, in a single view or as a list.</p>
+<figure class="shot"><img src="img/steps-cupcake--protocol-09-session.webp" alt="The session, showing the first step to carry out" loading="lazy"><figcaption>The session, showing the first step to carry out</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-session.webp" alt="Working through a session step by step" loading="lazy"><figcaption>Working through a session step by step</figcaption></figure>
+
+<h2 id="annotations">Annotations</h2>
+<p><strong>Add Annotation</strong> adds to the step:</p>
+<ul>
+<li><strong>Text</strong>: a note.</li>
+<li><strong>Upload</strong>: an image, video, audio recording or file.</li>
+<li><strong>Record</strong>: an audio, video or screen recording; audio and video can be transcribed automatically.</li>
+<li><strong>Sketch</strong>: a drawing.</li>
+<li><strong>Book</strong>: a booking of an instrument for the step, showing the instrument's other bookings.</li>
+<li><strong>Calc</strong> and <strong>Molarity</strong>: a calculator and a molarity calculator, kept with their history.</li>
+</ul>
+<figure class="shot"><img src="img/steps-cupcake--protocol-10-note.webp" alt="Writing a note on the step" loading="lazy"><figcaption>Writing a note on the step</figcaption></figure>
+
+<figure class="shot"><img src="img/steps-cupcake--protocol-11-noted.webp" alt="The note saved on the step for everyone in the session" loading="lazy"><figcaption>The note saved on the step for everyone in the session</figcaption></figure>
+
+<p><strong>Book</strong> beside a reagent reserves a quantity of it from storage. A booking can be deleted until the site's deletion
+window before it starts.</p>
+<h2 id="timers">Timers</h2>
+<p>A step with a duration has one timer, shared by everyone in the session: starting, pausing or resetting it does so
+for everyone.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-session-timer.webp" alt="A step timer running in a session" loading="lazy"><figcaption>A step timer running in a session</figcaption></figure>
+
+<h2 id="who-can-take-part">Who can take part</h2>
+<p><strong>Edit</strong> on a session sets its name, its planned dates and its <strong>editors</strong> and <strong>viewers</strong>: editors can change the
+session, viewers can only view it. <strong>Live Session</strong> opens a video call with the others in the session.</p>
+<h2 id="exporting">Exporting</h2>
+<p><strong>Export HTML</strong> saves the session with its protocols and annotations as a web page. <strong>Export to protocols.io</strong> posts
+it as protocols.io runs; see <a href="./protocols-io.html">protocols.io</a>.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

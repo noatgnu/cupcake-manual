@@ -1,0 +1,32 @@
+{
+ "app": "cupcake-vanilla",
+ "version": "latest",
+ "built": "2026-11-27T17:44:38+00:00",
+ "screenshots_label": "0.0.34",
+ "screens": {
+  "login": "getting-started.html",
+  "register": "getting-started.html",
+  "metadata": "getting-started.html",
+  "metadata-tables": "metadata-tables.html",
+  "metadata-tables/:id": "table-editor.html",
+  "metadata-tables/:id/:mode": "table-editor.html",
+  "shared/:token": "sharing.html",
+  "metadata-templates": "templates.html",
+  "column-templates": "templates.html",
+  "metadata-table-templates": "templates.html",
+  "vocabularies": "vocabularies.html",
+  "favorites": "favourites.html",
+  "lab-groups": "lab-groups.html",
+  "users/lab-groups": "lab-groups.html",
+  "users/profile": "profile-and-devices.html",
+  "user/devices": "profile-and-devices.html",
+  "admin/site-config": "administration.html",
+  "admin/users": "administration.html",
+  "admin/storage": "appliance.html",
+  "admin/backup": "appliance.html",
+  "admin/wifi": "appliance.html",
+  "admin/power": "appliance.html",
+  "plugins/:pluginId": "plugins.html",
+  "plugins/:pluginId/:pagePath": "plugins.html"
+ }
+}

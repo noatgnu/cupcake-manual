@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vocabularies · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" aria-current="page">Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Vocabularies</h1>
+<article class="manual"><p>A vocabulary is a list of terms that a column suggests values from, such as organisms, diseases or instruments.
+<strong>Vocabularies</strong> lists them with who they are available to, their number of terms, their status and when they were
+last loaded. Vocabularies provided by a plugin wait for approval by staff before they can be used.</p>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-01-list.webp" alt="The vocabularies available for metadata columns" loading="lazy"><figcaption>The vocabularies available for metadata columns</figcaption></figure>
+
+<h2 id="adding-a-vocabulary">Adding a vocabulary</h2>
+<ol>
+<li>
+<p>Choose <strong>New vocabulary</strong>, then enter the kind of term, its SDRF short name, a description and a label; the key is
+   made from the label.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-02-new.webp" alt="Describing a new custom vocabulary" loading="lazy"><figcaption>Describing a new custom vocabulary</figcaption></figure>
+
+<ol>
+<li>
+<p>Create it. It has no terms yet.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-03-created.webp" alt="The new vocabulary in the list, still without terms" loading="lazy"><figcaption>The new vocabulary in the list, still without terms</figcaption></figure>
+
+<ol>
+<li>
+<p>Choose <strong>Import terms</strong> and pick an OBO, OWL, CSV or TSV file. For CSV and TSV files, choose which columns hold the
+   names, ids, descriptions and synonyms. <strong>Add and update terms</strong> keeps the terms already there; <strong>Replace all
+   terms</strong> replaces them.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-04-import.webp" alt="Choosing which file columns hold the names, ids and synonyms" loading="lazy"><figcaption>Choosing which file columns hold the names, ids and synonyms</figcaption></figure>
+
+<ol>
+<li>
+<p>The vocabulary now has its terms.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-05-imported.webp" alt="The vocabulary after its terms were imported" loading="lazy"><figcaption>The vocabulary after its terms were imported</figcaption></figure>
+
+<p><strong>Browse terms</strong> searches the terms, edits them, adds new ones and marks obsolete ones.</p>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-06-terms.webp" alt="Browsing and editing the terms of the vocabulary" loading="lazy"><figcaption>Browsing and editing the terms of the vocabulary</figcaption></figure>
+
+<p><strong>Delete</strong> removes a vocabulary that no column uses.</p>
+<figure class="shot"><img src="img/steps-vanilla--vocabulary-07-delete.webp" alt="Deleting a vocabulary that no column uses" loading="lazy"><figcaption>Deleting a vocabulary that no column uses</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

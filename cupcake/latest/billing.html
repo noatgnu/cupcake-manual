@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Billing · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" aria-current="page">Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Billing</h1>
+<article class="manual"><ul>
+<li><strong>Records</strong> lists billing records by status (pending, approved, billed, paid, disputed, cancelled), cost centre,
+  funder and period. Select records to approve them, or export them as CSV.</li>
+<li><strong>Service Tiers</strong> sets tiers such as standard or premium, with a price multiplier, a discount, and booking limits.</li>
+<li><strong>Item Types</strong> are what is billed, such as instrument time, with a default unit and whether records need approval.</li>
+<li><strong>Prices</strong> sets the price of each item type for each tier: base price, currency, unit, minimum charge, setup fee,
+  bulk discount and the period it applies to.</li>
+</ul>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-billing-records.webp" alt="Billing records" loading="lazy"><figcaption>Billing records</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-billing-tiers.webp" alt="Service tiers" loading="lazy"><figcaption>Service tiers</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-billing-prices.webp" alt="Service prices" loading="lazy"><figcaption>Service prices</figcaption></figure>
+
+<p>A quote for a service is worked out from an instrument, a tier, an item type and a quantity, and downloaded.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

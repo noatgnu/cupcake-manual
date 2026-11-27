@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instruments · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" aria-current="page">Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" >Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Instruments</h1>
+<article class="manual"><p><strong>Instruments</strong> lists the instruments you can see; selecting one shows its details.</p>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-instrument.webp" alt="An instrument" loading="lazy"><figcaption>An instrument</figcaption></figure>
+
+<h2 id="an-instruments-details">An instrument's details</h2>
+<ul>
+<li><strong>Overview</strong>: its description, whether it accepts bookings, and its pre-approval limits.</li>
+<li><strong>Metadata</strong>: SDRF fields describing it, such as its model, used in the metadata of jobs run on it.</li>
+<li><strong>Support Information</strong>: serial number, vendor, manufacturer, location, maintenance frequency and warranty, and
+  how many days before maintenance or warranty end to notify.</li>
+<li><strong>Maintenance Logs</strong>: routine, emergency and other maintenance, with its status and attached documents. A log can
+  be saved as a template for the next one.</li>
+<li><strong>Bookings</strong>: the instrument's bookings, approved or waiting for approval.</li>
+</ul>
+<p>Documents such as safety data sheets, certificates and manuals are kept with the instrument, and <strong>Manage Contacts</strong>
+keeps the people to contact about it.</p>
+<h2 id="bookings">Bookings</h2>
+<p><strong>New Booking</strong> books the instrument from a start to an end time; a booking can be marked as maintenance. A booking
+is approved straight away when it starts within the instrument's <strong>Max Days Ahead</strong> and lasts no longer than its
+<strong>Max Days Within Usage</strong>, and overlaps no other booking. Otherwise it waits for approval. An instrument that does not
+allow overlapping bookings refuses a booking that overlaps another.</p>
+<h2 id="permissions">Permissions</h2>
+<p><strong>Manage Permissions</strong> gives users one of three levels:</p>
+<ul>
+<li><strong>View</strong>: see the instrument and its information.</li>
+<li><strong>Book</strong>: also book it.</li>
+<li><strong>Manage</strong>: also change its settings and maintenance logs, and its permissions.</li>
+</ul>
+<p>A disabled instrument is visible to staff only.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

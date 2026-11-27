@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample metadata · Cupcake manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./projects.html" >Projects</a></li>
+        <li><a href="./protocols.html" >Protocols</a></li>
+        <li><a href="./sessions.html" >Sessions</a></li>
+        <li><a href="./timers.html" >Timers</a></li>
+        <li><a href="./protocols-io.html" >protocols.io</a></li>
+        <li><a href="./instruments.html" >Instruments</a></li>
+        <li><a href="./storage.html" >Storage and reagents</a></li>
+        <li><a href="./jobs.html" >Instrument jobs</a></li>
+        <li><a href="./metadata.html" aria-current="page">Sample metadata</a></li>
+        <li><a href="./messages.html" >Messages and notifications</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./billing.html" >Billing</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Sample metadata</h1>
+<article class="manual"><p>The metadata tables of jobs follow the SDRF format. Their columns come from templates, their values can be suggested
+from vocabularies and favourites, and tables are imported and exported as SDRF or Excel files.</p>
+<ul>
+<li><strong>Table Templates</strong> are sets of columns that jobs' metadata tables start from.</li>
+<li><strong>Column Templates</strong> define single columns: their SDRF name, type, ontology and default value.</li>
+<li><strong>Favorites</strong> keeps values used often, for yourself, a lab group or everyone.</li>
+<li><strong>Vocabularies</strong> are the term lists that columns suggest values from.</li>
+</ul>
+<figure class="shot"><img src="img/gui-cupcake--cupcake-table-templates.webp" alt="Metadata table templates" loading="lazy"><figcaption>Metadata table templates</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-column-templates.webp" alt="Metadata column templates" loading="lazy"><figcaption>Metadata column templates</figcaption></figure>
+
+<figure class="shot"><img src="img/gui-cupcake--cupcake-vocabularies.webp" alt="Vocabularies" loading="lazy"><figcaption>Vocabularies</figcaption></figure>
+
+<p>In a job's metadata table, <strong>Import</strong> reads an SDRF or Excel file, <strong>Export</strong> writes one, <strong>Validate SDRF</strong> checks the
+table, and <strong>Search &amp; Replace</strong> replaces values. Columns marked <strong>Staff Only</strong> are filled in by staff. The Cupcake
+Vanilla manual describes these tables in detail.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your profile and device tokens · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" aria-current="page">Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Your profile and device tokens</h1>
+<article class="manual"><h2 id="profile">Profile</h2>
+<p><strong>User Profile</strong> shows your account and changes your name, password and email address; each change asks for your
+current password, and a new email address is confirmed by email.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-profile.webp" alt="Your profile" loading="lazy"><figcaption>Your profile</figcaption></figure>
+
+<p><strong>Appearance</strong> chooses the theme: <strong>Default</strong>, <strong>E-Ink</strong> for e-ink displays, or <strong>Stylized Sci-Fi Compact</strong>. Light or
+dark mode is switched in the navigation bar.</p>
+<h2 id="device-tokens">Device tokens</h2>
+<p>A device token lets a device, such as a lab display, use Cupcake Vanilla as you without your password.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-devices.webp" alt="Device tokens" loading="lazy"><figcaption>Device tokens</figcaption></figure>
+
+<p><strong>New Token</strong> creates one with a label, a description, read-only or read and write access, and an optional expiry
+date. Copy the token when it is shown: it is not shown again. <strong>Rotate token</strong> replaces a token, and <strong>Delete</strong>
+removes it.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

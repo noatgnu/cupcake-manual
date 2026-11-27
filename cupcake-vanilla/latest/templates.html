@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Templates · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" aria-current="page">Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Templates</h1>
+<article class="manual"><h2 id="column-templates">Column templates</h2>
+<p>A column template defines a column: its SDRF column name, such as <code>characteristics[organism]</code>, its type, its ontology
+for suggestions, a default value, and who can use it (only you, a lab group, or everyone). Built-in templates come
+from the SDRF schemas; you can add your own.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-column-templates.webp" alt="Column templates" loading="lazy"><figcaption>Column templates</figcaption></figure>
+
+<p><strong>Column Templates</strong> searches templates by name, schema, lab group and visibility. The grouped view gathers the
+templates of the same column name. <strong>New Template</strong> creates one; each template's actions edit, duplicate or delete it.</p>
+<h2 id="table-templates">Table templates</h2>
+<p>A table template is a set of columns to start tables from.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-table-templates.webp" alt="Table templates" loading="lazy"><figcaption>Table templates</figcaption></figure>
+
+<ul>
+<li><strong>Create from Schemas</strong> builds a template from SDRF schemas: a technology schema as the base, with sample or
+  organism and experiment schemas added as needed.</li>
+<li><strong>Manual Configuration</strong> starts an empty template that you add columns to.</li>
+</ul>
+<p>A template can belong to a lab group, and can be the default template for new tables. Its actions create a table from
+it, edit, duplicate or delete it, reorder its columns by schema, and add the columns its schemas have gained since.</p>
+<p>To create a table from a template, choose <strong>Create metadata table from this template</strong>, then enter the table's name
+and number of samples.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

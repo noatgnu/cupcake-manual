@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" aria-current="page">Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Administration</h1>
+<article class="manual"><h2 id="site-settings">Site settings</h2>
+<p><strong>Site Configuration</strong> sets the site's name, logo and main colour, and whether "Powered by CUPCAKE Vanilla" is shown.
+Under <strong>Authentication Settings</strong> it turns public registration and ORCID sign-in on or off. <strong>Audio/Video
+Transcription</strong> chooses the Whisper model used to transcribe recordings and shows the background workers.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-admin-site.webp" alt="Site settings" loading="lazy"><figcaption>Site settings</figcaption></figure>
+
+<h2 id="users">Users</h2>
+<p><strong>User Management</strong> searches accounts by name, staff status and account status, and creates, edits and deletes them.
+<strong>Reset password</strong> sets a new password, optionally asking the user to change it at the next sign-in.</p>
+<figure class="shot"><img src="img/gui-vanilla--vanilla-admin-users.webp" alt="Managing users" loading="lazy"><figcaption>Managing users</figcaption></figure></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

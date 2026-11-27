@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Importing, exporting and validating · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" aria-current="page">Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" >Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Importing, exporting and validating</h1>
+<article class="manual"><h2 id="importing">Importing</h2>
+<p><strong>Import</strong> on a table offers:</p>
+<ul>
+<li><strong>Import SDRF File</strong>: reads the samples and columns of an SDRF file into the table. <strong>Override count</strong> uses the
+  file's number of samples instead of the table's, and <strong>Apply schema</strong> adds the columns of the SDRF schema the file
+  declares.</li>
+<li><strong>Import Excel Template</strong>: reads a table exported with <strong>Export as Excel</strong> and filled in.</li>
+<li><strong>Import / Override Columns</strong>: maps the columns of an SDRF, Excel or CSV file onto the table's columns, by name, by
+  position or by hand, shows every change before it is made, and creates the columns the table does not have.</li>
+</ul>
+<p>To fill a new table from an SDRF file:</p>
+<ol>
+<li>
+<p>Open the table and choose <strong>Import</strong>, then <strong>Import SDRF File</strong>.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--table-05-import-menu.webp" alt="Choosing Import SDRF File from the Import menu" loading="lazy"><figcaption>Choosing Import SDRF File from the Import menu</figcaption></figure>
+
+<ol>
+<li>
+<p>Choose the file and confirm.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--table-06-confirm-import.webp" alt="Confirming the import of the SDRF file into the table" loading="lazy"><figcaption>Confirming the import of the SDRF file into the table</figcaption></figure>
+
+<ol>
+<li>
+<p>The table now holds the file's samples and columns.</p>
+</li>
+</ol>
+<figure class="shot"><img src="img/steps-vanilla--table-07-imported.webp" alt="The samples and columns read from the SDRF file" loading="lazy"><figcaption>The samples and columns read from the SDRF file</figcaption></figure>
+
+<h2 id="exporting">Exporting</h2>
+<p><strong>Export</strong> writes the table as an SDRF file, or as an Excel workbook that can be filled in and imported again. The
+Excel export can include the value recommendations of your lab groups and a sheet for the sample pools.</p>
+<figure class="shot"><img src="img/steps-vanilla--table-08-export-menu.webp" alt="Exporting the table as SDRF or Excel" loading="lazy"><figcaption>Exporting the table as SDRF or Excel</figcaption></figure>
+
+<p><strong>Open in Excel</strong> gives a code that the Cupcake Vanilla add-in for Excel opens the table with: in Excel, open the
+add-in, choose <strong>Use Launch Code</strong> and enter the code.</p>
+<h2 id="validating">Validating</h2>
+<p><strong>Validate</strong> checks a table against the SDRF format and the schemas you choose: the required columns, the column
+headers and the values. <strong>Skip Ontology Validation</strong> is faster but does not look up ontology terms, and <strong>Include
+Sample Pools</strong> checks the pools too. Errors must be fixed before the table is valid SDRF; warnings point at possible
+problems.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>

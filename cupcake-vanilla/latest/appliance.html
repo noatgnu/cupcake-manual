@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running the appliance · Cupcake Vanilla manual</title>
+  <link rel="stylesheet" href="./theme/manual.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./index.html">Cupcake Vanilla manual</a>
+    <span class="version" id="manual-version" data-version="latest">latest</span>
+    <select id="manual-versions" aria-label="Manual version" hidden></select>
+    <input id="manual-search" type="search" placeholder="Search the manual" aria-label="Search the manual" autocomplete="off">
+  </header>
+  <div class="layout">
+    <nav class="pages" aria-label="Manual pages">
+      <ul>
+        <li><a href="./getting-started.html" >Getting started</a></li>
+        <li><a href="./metadata-tables.html" >Metadata tables</a></li>
+        <li><a href="./table-editor.html" >Editing a table</a></li>
+        <li><a href="./import-export.html" >Importing, exporting and validating</a></li>
+        <li><a href="./sharing.html" >Sharing a table</a></li>
+        <li><a href="./templates.html" >Templates</a></li>
+        <li><a href="./vocabularies.html" >Vocabularies</a></li>
+        <li><a href="./favourites.html" >Favourites</a></li>
+        <li><a href="./lab-groups.html" >Lab groups</a></li>
+        <li><a href="./profile-and-devices.html" >Your profile and device tokens</a></li>
+        <li><a href="./administration.html" >Administration</a></li>
+        <li><a href="./appliance.html" aria-current="page">Running the appliance</a></li>
+        <li><a href="./plugins.html" >Plugins</a></li>
+      </ul>
+    </nav>
+    <main>
+      <p id="manual-older" class="notice" hidden></p>
+      <div id="manual-results" hidden></div>
+      <div id="manual-content"><h1>Running the appliance</h1>
+<p class="manual-appliance">Only on a Cupcake appliance.</p><article class="manual"><h2 id="storage">Storage</h2>
+<p><strong>Storage Management</strong> mounts a USB drive by its label, or an NFS or SMB share, at <code>/mnt/cupcake-data</code>, and shows
+what is mounted.</p>
+<h2 id="backups">Backups</h2>
+<p><strong>Backup Management</strong> backs up the database, the uploaded files, or both, to the mounted storage or another folder
+under <code>/mnt/cupcake-data</code> or <code>/opt/cupcake/backups</code>, and lists the backups made.</p>
+<h2 id="wi-fi">Wi-Fi</h2>
+<p><strong>WiFi Management</strong> connects to a Wi-Fi network with a password (WPA2 Personal) or an institutional account (WPA2
+Enterprise, such as eduroam), and shows the connection.</p>
+<h2 id="power">Power</h2>
+<p><strong>Power</strong> restarts the backend or the appliance, or shuts it down. After shutting down, wait until its lights stop
+before unplugging it.</p></article>
+</div>
+    </main>
+  </div>
+  <script src="./search-index.js"></script>
+  <script src="./theme/search.js"></script>
+  <script src="./theme/versions.js"></script>
+</body>
+</html>
