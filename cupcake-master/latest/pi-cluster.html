@@ -54,7 +54,7 @@ flashed card, next to the files already there. Each file is read on the next boo
 </tr>
 <tr>
 <td><code>cupcake-storage.txt</code></td>
-<td>Keeps k3s's data on a USB drive instead of the SD card; recommended</td>
+<td>Keeps k3s's data on a USB drive labelled <code>CUPCAKEDATA</code> instead of the SD card; recommended</td>
 </tr>
 <tr>
 <td><code>cupcake-tailscale.txt</code></td>
@@ -72,6 +72,19 @@ flashed card, next to the files already there. Each file is read on the next boo
 </table>
 <p>Files with secrets are removed from the card once they are used. Problems are written to <code>cupcake-k3s-error.txt</code>, and
 the admin login to <code>cupcake-k3s-credentials.txt</code>.</p>
+<h2 id="what-a-single-pi-can-do">What a single Pi can do</h2>
+<p>A single Pi is for demonstrations and trying Cupcake out: it runs cupcake-master and one instance. A second instance
+leaves a 4 GB Pi short of memory, and the first instance on a fresh Pi takes longer to install than later ones. For
+more instances or real use, add Pis as workers, or run k3s on machines with more memory.</p>
+<h2 id="using-a-usb-drive">Using a USB drive</h2>
+<p>Use an SSD on USB: a USB SSD, or a SATA or NVMe SSD in a USB enclosure. A USB flash stick writes k3s's and the
+instances' databases so slowly that k3s can stop and restart, so a drive that looks like one is refused; add
+<code>ALLOW_FLASH=yes</code> to <code>cupcake-storage.txt</code> to use it anyway.</p>
+<p>The drive must be formatted for Linux: ext4, xfs or btrfs. New drives, and drives formatted on Windows or macOS, are
+usually exFAT or FAT32. Add <code>FORMAT=yes</code> to <code>cupcake-storage.txt</code> to have the Pi format the drive as ext4 on its first
+setup; <strong>this erases the drive</strong>. It only formats a USB drive that is not already ext4, xfs or btrfs.</p>
+<p>If the drive cannot be used, k3s is not set up and the reason is written to <code>cupcake-k3s-error.txt</code>. Fix it, or
+remove <code>cupcake-storage.txt</code> to use the SD card, and restart the Pi.</p>
 <h2 id="following-the-setup">Following the setup</h2>
 <p>While a Pi sets up, it shows each step at <code>http://&lt;host name&gt;.local:8080</code>, for example <code>http://cupcake-k3s.local:8080</code>,
 and over Tailscale once it has joined. The page stays for an hour after setup finishes.</p>

@@ -1,8 +1,8 @@
 {
  "app": "cupcake-master",
  "version": "latest",
- "built": "2026-11-25T14:28:50+00:00",
- "screenshots_label": "pi-k3s-20261124",
+ "built": "2026-11-27T16:47:13+00:00",
+ "screenshots_label": "v0.0.6",
  "screens": {
   "account_login": "getting-started.html",
   "dashboard:index": "getting-started.html",
